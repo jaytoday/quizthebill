@@ -1,0 +1,22 @@
+{{extend 'layout.html'}}
+<h1>Google Checkout Level 1 and 2 on Google App Engine (demo)</h1>
+<br/>
+<br/>
+<center>
+<h2>You are buying an apple for $0.99</h2>
+<br/>
+{{=button}}
+</center>
+<br/><br/>
+<h2>Readme</h2>
+<br/><br/>
+<ul>
+<li>To test it, you can use this fake credit card. Type: American Express, Number: 3782 8224 6310 005, CVC: any four digit, Expiration Date: any future date.</li>
+<li>After completing the payment click on "back to..." or visit {{a=URL(r=request,f='checkorder')}}{{=A(a,_href=a)}} to see how this application receives the notification from Google.</li>
+<li>This application is a web2py plugin, i.e. once installed in web2py it can be used by other web2py applications. It is based on a modified version of gchecky created by Evgeniy Tarassov.</li>
+<li>The source code of this app can be downloaded <a href="http://mdp.cti.depaul.edu/appliances">here</a></li>
+</lu>
+<br/><br/>
+<h2>Here is the sample controller used here</h2>
+<br/><br/>
+{{=CODE(open('applications/%s/controllers/default.py' % request.application,'r').read(),language='web2py')}}

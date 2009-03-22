@@ -1,0 +1,44 @@
+
+{% extends "quizbuilder.html" %}
+
+
+{% block head %}
+{{ block.super }}
+<script type="text/javascript" src="/static/scripts/quizbuilder/induction.js"></script>
+{% endblock %}
+
+{% block main %}
+
+<body>
+
+<form name="content_url" id="content_url" class="purple_box">
+
+
+<input type="text" name="url" class="url_name" value="url" />
+<br/>
+
+Choose Proficiency
+<br/>
+<div id="url_proficiencies" style="margin-top:0px;"></div>
+
+<!--<br/><br/>or add a new proficiency <input type="text" name="proficiency" class="proficiency_name" value="proficiency" /> -->
+
+<input type="submit" onClick="return false;this.disabled = true;" id="submit_url" style="margin:-10px 0 20px -10px;" class="submit_url" value="Submit URL" />
+
+</form>
+
+ <div id="wrapper">
+<div id="loading_items" style="display:none;"><img src="/static/stylesheets/img/ajax-loader.gif"/><span class="loading">Loading...</span><img src="/static/stylesheets/img/ajax-loader.gif"/></div>
+<br/>
+
+<div class="quizbuilder_wrapper">
+    <div class="nav_wrap"><ul class="item_navigation"> </ul></div>  <!--navigation headers-->
+     
+<div class="scroller"><div class="quiz_items" id="quiz_items" style="display:none;"><!--quiz items--></div></div>
+
+</div>
+</div>
+
+
+</body></html>
+{% endblock %}

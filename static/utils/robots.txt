@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /console
+Disallow: /update_stats
+Sitemap: http://www.plopquiz.com/sitemap.xml
+

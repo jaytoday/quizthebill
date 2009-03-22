@@ -1,0 +1,60 @@
+	
+{% if profile_owner %}
+{% include "profile_owner.html" %}
+{% endif %}
+
+<ul id="personal_nav">
+<li  class="ui-tabs-nav-item"><a href="#info">Info</a></li>
+	<li style="display:none;" class="ui-tabs-nav-item"><a href="#school">School</a></li>
+		<li  style="display:none;" class="ui-tabs-nav-item"><a href="#network">Network</a></li>
+		
+	</ul>
+	<div id="personal">
+<div class="personal_content" id="info"> <div class="info_content">  
+{% if user.is_sponsor %}Sponsor Type:{% else %}Work Status:{% endif %} <div>{{ user.work_status|default_if_none:"" }} </div>
+
+Location: <div>{{ user.location|default_if_none:"" }}</div>
+
+Webpage: <div><a target="_blank" href="{{ user.webpage }}">{{ user.webpage|default_if_none:"" }}</a></div>
+
+About Me: <div>{{ user.aboutme|default_if_none:"" }}</div>		
+ </div> </div> 
+
+
+<div class="personal_content" id="school">
+<div class="school_content">
+
+ </div> 
+ 
+ 
+</div>
+
+					<div class="personal_content" id="network">
+<div class="network_content"><div class="outside_profile linkedin">LinkedIn Profile</div><div class="outside_profile facebook">Facebook Profile</div>
+<div class="network_item following"> 
+Following: 
+
+<div>
+<li>Greenfuel Technologies</li>
+<li>Brightsource</li>
+<li>Sopogy</li>
+</div>
+
+ </div> <!--end info_content-->
+ 
+	<div class="network_item following"> 
+Employed By: 
+
+<div>
+<li>Plopquiz</li>
+
+</div>
+
+ </div> <!--end info_content-->	
+
+ </div> 
+ 
+ 
+</div>
+</div> <!-- personal_nav -->
+

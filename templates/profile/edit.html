@@ -1,0 +1,175 @@
+{% extends "../base.html" %}
+{% block head %}
+<style type="text/css"> {% include "../../static/stylesheets/profile/edit.css" %} </style>
+<style type="text/css"> {% include "../../static/stylesheets/utils/form.css" %} </style>
+<style type="text/css"> {% include "../../static/stylesheets/profile/tabs.css" %} </style>
+<style type="text/css"> {% include "../../static/stylesheets/profile/profile.css" %} </style>
+
+
+
+	<script type="text/javascript">
+	 photo_keys = {{ photo_keys }};  
+
+	 // by default, redirect to profile
+	 
+	 redirect_path = '/profile/{{user.profile_path}}'; 
+	 
+	 // if user is sponsor and hasn't chosen settings, redirect to settings page
+	 {% if user.is_sponsor %}  if ("{{ edit_type }}" == "Create")  redirect_path = '/edit_sponsor_settings';   {% endif %}
+	 
+	</script> 
+
+	<script type="text/javascript"> {{ edit_profile_js }}</script>
+{% endblock %}
+
+
+{% block main %}
+
+
+
+
+<div class="edit_profile_wrapper frame_box">
+
+<div class="edit_profile">
+
+
+<h2>{{ edit_type }} Your Profile</h2>
+
+
+
+        <form action="#" class="signup" name="signup" enctype="multipart/form-data" onSubmit="return false;" method="get">
+        
+<fieldset><legend>Basic Info</legend> 
+
+<ul id="1">
+<li> <label for="fullname">Name</label> <input class="signup fullname" type="text" name="fullname" maxlength="20" value="{{ user.fullname }}" id="fullname"   /> </li>
+<li> <label for="email">Email</label> <input class="signup email" type="text" name="email" value="{{ user.email|default_if_none:"" }}" maxlength="25" id="email"   /> 
+	<br/><div style="margin:5px 35px 0; font-size:.9em;">( not publicly displayed )</div>
+	</li>
+
+<!--
+<li style="margin: -5px 10px;"> <label for="student" style="font-size: 0.9em;">E-mail me occasional PlopQuiz news updates</label> <input type="checkbox" checked class="signup student" name="email_updates" maxlength="25" id="email_updates"/> </li>
+<div style="margin: 5px; float: left; height: 17px;"/>
+-->
+
+<li> <label for="student">Student</label> <input class="signup student" type="checkbox" name="student" {% if not user.is_sponsor %}checked{% endif %} DISABLED maxlength="25" id="student"   /> </li>
+<li> <label for="sponsor">Sponsor</label> <input class="signup sponsor" type="checkbox" name="sponsor" {% if user.is_sponsor %}checked{% endif %} DISABLED maxlength="25" id="sponsor"   /> </li>
+
+</ul>
+
+
+
+
+</fieldset>
+
+<fieldset><legend>Personal Details</legend> <br/>
+<ul id="2" > 
+<li> <label for="location">Location</label> <input class="signup occupation" type="text" name="location" maxlength="25" value="{{ user.location|default_if_none:"" }}" id="location"   /> </li>
+<li> <label for="webpage">Webpage</label> <input class="signup occupation" type="text" name="webpage" maxlength="25" value="{{ user.webpage|default_if_none:"" }} " id="webpage"   /> </li>
+
+  {% if user.is_sponsor %}
+  
+<li> <label for="work_status">Sponsor Type</label>
+  <select name="work_status">
+  <option {% ifequal user.work_status "Startup" %}selected{% endifequal %}>Startup</option>
+  <option {% ifequal user.work_status "Enterprise" %}selected{% endifequal %}>Enterprise</option>
+  <option {% ifequal user.work_status "Non-Profit" %}selected{% endifequal %}>Non-Profit</option>
+  <option {% ifequal user.work_status "Government" %}selected{% endifequal %}>Government</option>
+  <option {% ifequal user.work_status "Sole Proprietor" %}selected{% endifequal %}>Sole Proprietor</option>
+</select>
+  </li>
+  
+    {% else %}
+ 
+ <li> <label for="work_status">Work Status</label>
+  <select name="work_status">
+  <option {% ifequal user.work_status "Full-Time" %}selected{% endifequal %}>Full-Time</option>
+  <option {% ifequal user.work_status "Part-Time" %}selected{% endifequal %}>Part-Time</option>
+  <option {% ifequal user.work_status "Student" %}selected{% endifequal %}>Student</option>
+</select>
+  </li>
+  
+     
+  {% endif %}
+  
+  
+  
+  <li> <label class="aboutme" for="aboutme">About Me</label> <textarea class="signup aboutme"   id="aboutme" cols="15" rows="3" type="textarea" name="aboutme" maxlength="80" id="aboutme">{{ user.aboutme|default_if_none:"" }}</textarea> </li>
+<div id="chars_left"><span>0</span> chars left</div>
+</ul>
+</fieldset>
+   </form>
+  
+
+
+
+</div>
+</div>
+
+<div class="preview_profile_wrapper">
+<div class="preview_profile">
+
+
+<div class="profile_outer">
+	
+		<div class="profile">
+          
+           <div class="change_picture"> {# This div should not contain the preview and submit buttons!! #}
+       <form action="/profile/{{user.profile_path}}" class="picture" name="picture" onSubmit="return false;" enctype="multipart/form-data" method="get"> 
+       <div class="panel_box pic_box" id="cycle_img" >Cycle Pictures</div> 
+       <div id="change_img" >Upload Picture</div>
+         <div class="cancel"><a onClick="CancelPhotoUpload()">Cancel</a></div>  </div>
+		<div id="photo" class="edit_photo"><img class="old" src='/image/profile/?img_id={{ user.photo.key }}&size=large'/></div>
+		<div id="basics" class="edit_basics">
+		<div id="p_fullname"></div>
+		<div id="profession"></div>
+		</div>
+		
+            <div id="summary" class="profile-panel">
+
+                <div class="edit_content big_panel" >
+        
+				<!--<div id="img_select"><img src="images/1.jpg" alt="hello" /></div>
+				<p>Photo <span id="p_select">1</span> chosen</p> -->
+				
+			<ul>
+				<li><strong>Email:</strong> <span id="p_email"></span></li>	
+				<li><strong>Location:</strong> <span id="p_location"></span></li>	
+			<li><strong>Webpage:</strong> <span id="p_webpage"></span></li>		
+				<li><strong>{% if user.is_sponsor %}Sponsor Type:{% else %}Work Status:{% endif %}</strong> <span id="p_work_status"></span></li>
+	<li><strong>About Me:</strong><span id="p_aboutme"></span></li> 
+</ul>
+      
+               
+                </div>
+                
+                
+            
+            
+            </div><!-- end summary -->
+  
+   <div class="cancel_edit"><span>or Cancel</span> <div class="form_cancel" id='cancil_profile'><img src="/static/stylesheets/img/utils/cancel.png"></div></div>          
+              <div class="form_error warning_note" id="form_error">
+       There was an error sending this form.<div style="height:10px;"></div>If refreshing the page doesn't work,<div style="height:10px;"></div> <a id="contact">contact us</a>. 
+       </div>
+       
+  
+
+   <div id="submit_profile" class="form_proceed">
+  <button onSubmit="return false;" onClick="return false;"><img width=50 height=51 src="/static/stylesheets/img/utils/purple_next.png"/><span class="continue_button" >Save Changes</span></button>
+  </div>
+
+            
+
+
+</div>  <!-- profile --> 
+
+
+
+
+
+ </div> 
+
+</div>
+</div>
+{% endblock %}

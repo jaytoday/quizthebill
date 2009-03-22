@@ -1,0 +1,94 @@
+8
+
+dir
+105
+http://freebase-suggest.googlecode.com/svn/trunk
+http://freebase-suggest.googlecode.com/svn
+
+
+
+2008-10-03T17:48:08.049000Z
+105
+daepark
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+e37d3183-843a-0410-bac8-29b3d39c4e8b
+
+VERSION
+file
+
+
+
+
+2008-10-13T22:08:41.000000Z
+25c4a0129cc5bea3766b3512992f1244
+2008-07-18T19:49:01.885239Z
+103
+daepark
+
+src
+dir
+
+COPYRIGHT
+file
+
+
+
+
+2008-10-13T22:08:41.000000Z
+6cbfdc251cc6bc29db4fc5e3441a762c
+2007-10-19T21:11:59.932598Z
+41
+daepark
+
+index.html
+file
+
+
+
+
+2008-10-13T22:08:41.000000Z
+60fcff0b67de8be07cee1a2bbd32a92d
+2008-02-25T18:39:09.992867Z
+75
+will.moffat
+
+README
+file
+
+
+
+
+2008-10-13T22:08:41.000000Z
+39a73b4f00ba4f837eebd594e08ef62b
+2007-10-25T21:53:39.594437Z
+45
+daepark
+
+Makefile
+file
+
+
+
+
+2008-10-13T22:08:41.000000Z
+a84c008c2e987577688cf5d61114a795
+2007-11-07T23:55:27.845069Z
+49
+will.moffat
+
+examples
+dir
+

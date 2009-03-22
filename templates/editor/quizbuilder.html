@@ -1,0 +1,64 @@
+{% extends "../base.html" %}
+
+
+{% block head %}
+
+
+<style type="text/css"> 
+{% include "../../static/stylesheets/editor.css" %} 
+</style> 
+
+<script type="text/javascript">
+{% include "../../static/scripts/utils/parseJSON.js" %} 
+{% include "../../static/scripts/jquery/jquery.field.min.js" %} 
+{% include "../../static/scripts/scroll/jquery.scrollTo-min.js" %} 
+{% include "../../static/scripts/scroll/jquery.localscroll-1.2.5.js" %} 
+{% include "../../static/scripts/scroll/jquery.serialScroll-1.2.1.js" %} 
+{% include "../../static/scripts/editor/item-slider.js" %} 
+{% include "../../static/scripts/editor/jeditable/jquery.jeditable.min.js" %}
+{% include "../../static/scripts/editor/jeditable/jquery.jeditable.autogrow.js" %} 
+</script>
+<script type="text/javascript">
+{% include "../../static/scripts/editor/editor.js" %} 
+{% include "../../static/scripts/editor/edit_quiz.js" %} 
+</script>
+
+<title>Plopquiz - Quizbuilder</title>
+
+
+{% endblock %}
+
+
+{% block main %}
+
+<form name="select_proficiency" id="select_proficiency" class="purple_box" >
+<br/>
+
+<span class="checkbox" id="choose_proficiencies">Choose a Quiz Subject</span>
+<br/>
+<div id="proficiencies"></div>
+
+<br/>
+
+<input type="submit" onClick="return false;this.disabled = true;" id="submit_proficiency" class="submit_proficiency" value="Continue" />
+
+
+</form>
+
+ <div id="wrapper">
+<div id="loading_items" style="display:none;"><img src="/static/stylesheets/img/ajax-loader.gif"/><span class="loading">Loading...</span><img src="/static/stylesheets/img/ajax-loader.gif"/></div>
+<br/>
+
+<div class="editor_wrapper">
+   <div class="nav_wrap"><ul class="item_navigation"> </ul></div>  <!--navigation headers-->
+     
+<div class="scroller"><div class="quiz_items" id="quiz_items" style="display:none;"><!--quiz items--></div></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+
+
+

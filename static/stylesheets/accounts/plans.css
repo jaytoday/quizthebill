@@ -1,0 +1,28 @@
+
+
+div.plans{
+float:left;
+margin:-30px 0;
+}
+
+div.plan{
+float:left;
+margin:15px 20px 0 0;
+}
+
+div#micro{
+padding: 8px 0px;
+}
+
+div.plans_description{
+font-size:1.1em;
+margin:160px -15px;
+padding:20px 10px 7px;
+width:658px;
+}
+
+
+div.contact_support{
+margin: 11px;
+font-size: 11px;
+}

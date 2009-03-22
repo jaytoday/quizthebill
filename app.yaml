@@ -1,0 +1,59 @@
+application: quizthebill
+version: 1
+runtime: python
+api_version: 1
+
+default_expiration: "4d 5h"
+
+handlers:
+
+
+# Static Files
+
+- url: /static
+  static_dir: static/
+
+- url: /favicon.ico
+  static_files: static/stylesheets/img/favicon.ico
+  upload: static/stylesheets/img/favicon.ico
+
+
+- url: /robots.txt
+  static_files: static/utils/robots.txt
+  upload: static/utils/robots.txt
+
+- url: /sitemap.xml
+  static_files: static/utils/sitemap.xml
+  upload: static/utils/sitemap.xml
+
+
+
+# Utils & Development Tools
+
+- url: /console/static
+  static_dir: console/app/view/static
+
+ 
+- url: /console.*
+  script: console/app/console.py
+  login: admin
+
+  
+- url: /gaeutilities/css
+  static_dir: utils/appengine_utilities/interface/css
+
+- url: /gaeutilities/.*
+  script: utils/appengine_utilities/interface/main.py
+  login: admin
+  
+  
+  
+
+
+#### MAIN HANDLER ###
+    
+- url: /.*
+  script: main.py
+
+
+

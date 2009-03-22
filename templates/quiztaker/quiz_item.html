@@ -1,0 +1,44 @@
+
+<div class="quiz_frame_header">
+
+{% block quiz_frame_logo %}
+<div class="quiz_frame_logo" id="{{ theme }}">
+<img src="{{ http_host }}/static/stylesheets/img/quiztaker/themes/{{ theme }}.png"/>
+</div>
+{% endblock %}
+
+
+<div class="quiz_frame_title" >
+
+<div class="tab {{browser}}" >
+<div id="quiz_category">{% block quiz_frame_title %}{{ topic_name }}{% endblock quiz_frame_title %}
+</div>
+
+<img class="tab_left" alt="" src="{{ http_host }}/static/stylesheets/img/quiztaker/tab.png"/> 
+{# special tab image for webkit -- better yet, use seperate CSS color for tab #}
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="quiz_frame_content" >
+
+<div class="quiz_scroll_container no_drag">
+<div class="quiz_frame_text">
+
+{% block quiz_frame_text %}{{ content }} {% endblock quiz_frame_text %}
+
+
+</div>
+</div>
+
+</div>

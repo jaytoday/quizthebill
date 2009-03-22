@@ -1,0 +1,28 @@
+	<div class="quiz_subjects" id='{{ offset }}'>
+		
+		<div id="subject_thumb_container"  style="margin: 6px -10px;">
+		{% for s in subjects %} 
+	 
+		{% include "utils/subject_thumb.html" %}
+
+		{% endfor %}	
+	
+
+		</div>
+
+
+	</div>
+
+
+<div id="subject_frame_container">
+
+	{% for s in subjects %} 
+
+{% include "subject_template.html" %}
+	
+	{% endfor %}
+
+	
+
+</div>
+

@@ -1,0 +1,124 @@
+{% extends "../base.html" %}
+{% block head %}
+
+<style type="text/css"> {% include "../../static/stylesheets/homepage/homepage.css" %} </style>
+<script type="text/javascript">{{ homepage_js }}</script>
+
+
+{% endblock %}
+
+
+{% block main %}
+			<h1 style="display:none;">Test Your Knowledge, Upgrade Your Resume, Earn Awards and Sponsors.</h1>
+										<a style="float:right; display:block;" onclick="window.open('http://www.co2stats.com/certpro.php?s=1278&ref=http://www.plopquiz.com','popup','width=550,height=515,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0');return false;" href="http://www.co2stats.com/certpro.php?s=1278&ref=http://www.plopquiz.com/">
+<img border="0" src="/static/stylesheets/img/homepage/green_site.png"/>
+</a>
+					
+
+
+		<div class="left">		
+						<div id="logo">
+							<img height="99" width="394" src="/static/stylesheets/img/homepage/horizontal_logo.png" alt="" />
+						</div>
+						<div id="intro">
+							<div id="smart">show</div>
+						
+							<div id="blinder"> what<span></span>you</div>
+							<div id="motto">
+								<span class="blank"><span class="smart_span_holder" id="smart1">show</span></span>&nbsp;&nbsp;what   you
+								<span class="blank" id="two"><span class="smart_span_holder">show</span></span> 
+							</div>
+			
+						</div>
+		
+	<!--	
+<div class="employers frame_box">
+<h3>Employers</h3>
+<div id="claim">claim your profile and discover new talent.</div>
+<input type="text" id="employer_name" value="what's the name of your business?" />
+</div>  -->	
+
+<div id="intro_frame_box" class="note{# frame_box #}">
+<h3>PlopQuiz Is A Free Resource For Quizzes</h3>
+
+<div class="mc"><span class="section"><button>Take A Quiz</button></div>
+<div class="frame_box description">Whether it's to study for a test or upgrade your resume, completing a quiz requires under 5 minutes.</div>
+
+<div class="mc"><span class="section"><button>Make A Quiz</button></div>
+<div  class="frame_box description">You can create a quiz about any subject and invite others to contribute.</div>
+{% comment %}
+
+<h3>PlopQuiz In 6 Quick Steps</h3>
+<div class="mc"><span class="num"><button>1.</button></span>Take A Quiz</div>
+<div class="mc"><span class="num"><button>2.</button></span>Build an Academic Profile</div>
+<div class="mc"><span class="num"><button>3.</button></span>Earn Awards</div>
+<div class="mc"><span class="num"><button>4.</button></span>Earn Sponsorships</div>
+<div class="mc"><span class="num"><button>5.</button></span>Upgrade Your Resume</div>
+<div class="mc" {# id="sixth" #}><span class="num"><button>6.</button></span>Share a Quiz on Your Site </div>
+
+<div id="business" class="frame_box">Your Organization Can Also Get Involved<br/><a href="/sponsors/">Apply To Be A Community Sponsor</a></div>
+
+ {% endcomment %}
+
+
+</div>  
+
+
+		</div> 
+
+
+
+<div class="right">	
+<div class="right_inner">	
+
+<!-- <div class="upgrade">Upgrade your resume in <span class="mag">five minutes</span>. It's <span class="mag">free</span>. </div> -->
+
+<div id="take_quiz">
+
+<div id="featured_quiz_header" class="frame_box">featured quiz</div>
+{# This is where the featured quiz loads #}
+
+<script src="{{ http_host }}/js/quiz/{{ featured_quiz }}" type="text/javascript"></script>  
+
+<div id="quiz_list">
+<ul>
+<li> {# id used to get quiz script #}
+<div id="Smart Grid" class="quiz_header frame_box">smart grid</div>
+</li>
+<li>
+<div id="Cars 2.0" class="quiz_header frame_box">cars 2.0</div>
+</li>
+<li>
+<div id="Energy Efficiency" class="quiz_header frame_box">energy efficiency</div>
+</li>
+
+</ul>
+</div>
+
+
+<!--
+<h1>Take an <span id="et">Energy Tech</span> <span id="q">Quiz</span></h1>
+
+<div class="p_links"><a>biofuels</a> - <a>finance</a> - <a>solar power</a> - <a>law &amp; policy</a> -  <a>smart grid tech</a> - <a> and more!</a></div>
+-->
+</div>
+
+<div id="action_feed" class="action_feed">
+{% for action in recent_actions %}
+
+{% include "feed_item.html" %}
+
+
+{% endfor %}
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+{% endblock %}

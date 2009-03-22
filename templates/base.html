@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>PlopQuiz / {% block title %}Show What You Know{% endblock %}</title> 
+{# meta tags #}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% block thumbnail %}<link rel="image_src" href="{{ http_host }}/static/stylesheets/img/utils/plopquiz_icon.png" type="image/png" data-width="157" data-height="157" />{% endblock %}
+<meta id="description" name="Description" content="{% block description %} PlopQuiz - Show What You Know About Subjects of Public Interest{% endblock %}" /><meta id="keywords" name="Keywords" content="Certification Energy Cleantech Greentech Reinvestment Recovery.Gov Recovery Plan Resume Education OER" />
+<link rel="image_src" href="http://www.lacrossecamp.com/graphics/logo2.jpg" type="image/jpeg" data-width="100" data-height="80" />
+
+{# include cached/minimized base for shared scripts/styles #}
+<script type="text/javascript" src="/headers?js=base"></script> 
+<link rel="stylesheet" type="text/css" charset="utf-8" href="/headers?css=base" />
+<script type="text/javascript">{% include "../utils/template_scripts.js" %}</script> 
+
+  
+{% if not dev_server %}{# NOT WORKING <script defer src="http://asset.userfly.com/users/5743/userfly.js" type="text/javascript"></script> #} {% endif %}
+
+
+
+<link rel="icon" href="/static/stylesheets/img/favicon.ico" type="image/x-icon"> 
+
+{% block base_head %} {# header elements for other pages #} {% endblock %}
+
+
+{% block head %}{% endblock %}
+</head>
+
+<body id="PlopQuiz" class="PlopQuiz">
+<div id="viewport">
+<div class="mid layer">
+<div id="clouds-far"></div>
+</div>
+<div class="far layer">
+<div id="land"></div>
+</div>
+<div class="near layer">
+<div id="clouds-near"></div>
+</div>
+</div>
+<div id="cutoff">
+<div id="flyer"><a style="display:none;"><span></span></a></div>
+</div>
+<div class="sitelet" id="sitelet-home">
+<div class="top">
+<div class="left corner"></div>
+<div class="right corner"></div>
+<div class="liquid"></div>
+</div>
+<div class="middle">
+<div class="wrap1"><div class="wrap2">
+
+
+
+<div class="main_wrapper">
+
+{% include "../utils/nav_bar.html" %}
+
+
+<div id="right_corner">{# DEPRECATED <span class="page_title">{{ page_title }}</span>#}<img src="/static/stylesheets/img/base/pq_logo_thumb.png"/ > </div>
+
+<div class="loading" style="display:none;"><img width='32' height='22' src="/static/stylesheets/img/ajax-loader.gif"/><span class="loading">Loading...</span><img width='32' height='22' src="/static/stylesheets/img/ajax-loader.gif"/></div>
+
+<div class="main {# hide #}">		
+
+{% block main %}				
+{% endblock %}
+
+</div>
+
+<div id="quick_links" class="quick_links">
+<a  id="about_dialog" title="About PlopQuiz" class="about_dialog">About</a> | <a id="contact_dialog" title="Contact PlopQuiz" class="contact_dialog">Contact Us</a> | <a target="_blank" title="The PlopQuiz Blog" href="http://blog.plopquiz.com">Blog</a> 
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+<div class="clear">
+</div>
+</div>
+<div class="bottom">
+<div class="left corner"></div>
+<div class="right corner"></div>
+<div class="liquid"></div>
+</div>
+</div>
+<div id="pq_quiz_overlay" style="display:none;"></div>
+
+
+
+{% include "../utils/base_script.html" %}
+
+{% include "../utils/about.html" %}
+{% include "../utils/contact_us.html" %}
+
+
+
+
+</body>
+</html>

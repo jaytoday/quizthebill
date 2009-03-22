@@ -1,0 +1,41 @@
+{% extends "../base.html" %}
+{% block title %}Register{% endblock %}
+{% block head %}
+
+	<style type="text/css"> {% include "../../static/stylesheets/accounts/accounts.css" %} </style> 
+
+<script type="text/javascript"> {{ register_js }}</script>
+		
+{% endblock %}
+
+
+{% block main %}
+
+<div id="signup_box" class="frame_box">
+
+<h2 id="header"> Create Your Account</h2>
+
+<label id="name">name</label>
+<input type="text" name="nickname" id="nickname" value='{{nickname|default_if_none:"your name"}}' maxlength="18">
+
+<div id="notice">
+<span id="checking" style="display:none;"><img src="/static/stylesheets/img/utils/mini_loader.gif"/>Checking Name Availability...</span>
+<span id="available" style="display:none;">Available</span><span id="not_available" style="display:none;">Not Available</span>
+<span id="too_short" style="display:none;">Your Name Should Be At Least 4 Characters</span></div>
+
+<label id="email">e-mail</label>
+<input type="text" name="email" class="email_address" id="email_address" value='{{email|default_if_none:"your email address"}}' maxlength="30">
+
+
+</div>
+
+
+
+<div class="submit_nickname"> <div class="form_proceed" id='submit_nickname'>
+
+<button><span class="continue_button">Continue</span> <img src="/static/stylesheets/img/utils/purple_next.png"/></button></div></div>          
+    
+    
+        
+    <div style="display:none;" id="signup_reminder" class="warning_note"></div>
+{% endblock %}

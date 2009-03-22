@@ -1,0 +1,131 @@
+{% extends "../base.html" %}
+{% block title %}Sponsor {{ profile.fullname }}{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/store/sponsorship.css"/>
+
+<!-- <script src="/static/scripts/homepage/proficiency.js" type="text/javascript" charset="utf-8"></script> -->
+
+<!-- For Tips in IE <script src="/static/scripts/utils/excanvas-compressed.js" type="text/javascript" charset="utf-8"></script> -->
+<script src="/static/scripts/jquery/jquery.tips.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/scripts/store/sponsorship.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function()
+{
+$('.sponsorship_data').data('target', '{{ profile.key }}');
+// $('.sponsorship_data').data('sponsor', '{{ profile.key }}');  -- Just Using Session
+
+});
+
+
+</script>
+
+
+
+{% endblock %}
+
+
+{% block main %}
+<div class="sponsorship_data"></div>
+<div class="sponsoring">
+<span class="sponsor_header"><img class="energy_small" src="/static/stylesheets/img/utils/energy_small.png"/> Pledge Your Sponsorship</span>
+<div class="info_note profile_box">
+<h2 class="info_header">Your Sponsorship Is a Performance-Based Reward.</h2>
+<br/>
+<p>You won't be charged until your criteria is met.</p> 
+<a id="how_we_grade">How We Grade</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="sponsorship_packages">
+
+<span class="package_header"> Choose a Package</span>
+<div class="packages">
+
+
+<div class="panel_box package" id="micro">
+
+<span class="package_title">Micro</span>
+
+</div> 
+
+
+<div class="panel_box package" id="medium">
+
+<span class="package_title">Medium</span>
+
+</div> 
+
+
+<div class="panel_box package" id="magna_cum_laude">
+
+<span class="package_title">Magna Cum Laude</span>
+
+</div>
+
+
+</div>
+</div>
+
+
+<div class="subject_field">
+
+<span class="choice_header"> Choose A Quiz Subject</span>
+<div class="choices">
+<select id="proficiency">
+<option value='any_subject' selected>Any Subject</option>
+{% for p in proficiencies %} <option value='{{ p.key }}'>{{ p.name }}</option> {% endfor %}
+</select>
+</div>
+</div>
+
+<div class="award_type_field">
+<span class="choice_header"> Choose An Award Type</span>
+<div class="choices">
+<select id="award_type">
+<option value='any' selected>Any Award</option>
+<option value='fluency'>Fluency</option><option value='excellence'>Excellence</option>
+<span style="display:none;" id="fluency_tip"><h2>Fluency</h2> is the best!</span>  <span style="display:none;" id="excellence_tip"><b>Excellence</b> is the best!</span>
+
+
+
+</select>
+</div>
+</div>
+
+
+    <div class="proficiency_pic selection_box sponsorship_preview">
+                        <ol class="sliderContent" id="sponsorshipContent">
+                             <div class="bigsliderImage sponsorshipImage">
+                              <div id="profile_photo_preview"><img src='/image/profile/?img_id={{ profile.photo.key }}&size=small'/><br/> {{ profile.fullname }} </div>
+
+<span class="slider img_{% cycle top,bottom %}"> 
+
+                             <span class ="preview_award_type">Any Award</span><br/><span class ="preview_subject">Any Subject</span></span>
+                         </div> 
+                         <li id="any_subject" class="bigsliderImage sponsorshipImage">
+                         <img src='/image/subject/?img_id=default&size=large'/>
+                         </li>
+                          {% for p in proficiencies %} 
+                        <li style="display:none;" id="{{ p.key }}" class="bigsliderImage sponsorshipImage">
+                         <img src='/image/subject/?img_id={{ p.images.0.key|default:"default" }}&size=large'/> 
+                        </li>
+{% endfor %}
+             <div class="clear sponsorshipImage"></div>
+                    </ol>
+    
+    </div>
+
+
+<div class="submit_sponsorpledge"> <div class="form_proceed" id='submit_sponsorpledge'>
+
+<button><span class="continue_button">Continue</span> <img src="/static/stylesheets/img/utils/purple_next.png"/></button></div></div>          
+    
+
+
+{% endblock %}

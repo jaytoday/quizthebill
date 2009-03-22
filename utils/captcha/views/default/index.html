@@ -1,0 +1,17 @@
+{{extend "layout.html"}}
+<script src="{{=URL(r=request, c='static', f='jscolor/jscolor.js')}}" type="text/javascript"></script>
+<h1>Captcha module</h1>
+<div class="center" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dotted #DDDDDD">{{=captchaf}}</div>
+{{=settingsf}}
+<p>
+	<ul>
+		<li>There is no zero</li>
+		<li>Requires <a href="http://www.pythonware.com/products/pil" target="_new">Python Imaging Library (PIL)</a></li>
+		<li>Uses <a href="http://jscolor.com" target="_new">jsColor</a> color picker</li>
+		<li>Uses free fonts from <a href="http://www.fonts4free.net" target="_new">www.fonts4free.net</a></li>
+		<br />
+		<li>Font size: size of the text in font points, not pixels. Image size may vary, depending on chosen font</li>
+		<li>Text scale: characters are randomly scaled between 1.0 and value. 1.0 disables scaling</li>
+		<li>Text angle: characters are randomly rotated between -value and value. 0 disables rotating</li>
+	</ul>
+</p>

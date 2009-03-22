@@ -1,0 +1,77 @@
+{% extends "../base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}
+<!-- This should only be loaded when Privacy Policy is clicked -->
+
+<style type="text/css"> {% include "../../static/stylesheets/accounts/accounts.css" %} </style> 
+
+	<script type="text/javascript"> {{ login_js }} </script>
+	
+{% endblock %}
+
+
+{% block main %}
+
+{% if error %} 
+<div class="login_notice warning_note">We were unable to sign you in with the selected service.</div>
+{% endif %}
+
+{% if pre_test %} 
+<div class="login_notice warning_note">You must sign in before taking a test. </div>
+{% endif %}
+
+
+{% ifequal login_context "sponsor"%}
+<div style='margin-top: 5px;' class="login_notice warning_note">We've logged you off your sponsor account.<div style="height:7px;"></div>
+Create a student account to save your quiz score.</div>
+{% endifequal %}
+
+
+
+{% ifequal login_context.2 "from_quiz"%}
+<div class="login_notice warning_note">Please sign in to save your quiz. </div>
+{% endifequal %}
+
+
+{% ifequal login_context "reset"%}
+<div style='margin-top: 5px;' class="login_notice warning_note">You are resetting your account access.<div style="height:7px;"></div>
+Choose a service to link to your PlopQuiz account</div>
+{% endifequal %}
+
+
+
+<div class="login_box frame_box">
+<div class="note">For your 
+{% if dev_server %} <a style="font-weight:bold;" href="/dev/admin?shortcut=login">convenience</a>{% else %} convenience{% endif %},&nbsp; PlopQuiz does not require account registration. </div>
+
+
+<div id="proxy_login">
+<iframe src="https://plopquiz.rpxnow.com/openid/embed?token_url={{ token_url }}"
+  scrolling="no" frameBorder="no" style="margin: 20px 0px 0px 20px; width:400px;height:230px;">
+</iframe>
+</div>
+
+{% include "reset_account.html" %}
+
+{% include "email_login.html" %}
+
+<div id="pq_login_link" style="display:none;">
+<a id="email">Login with an E-mail and Password</a><a id="proxy" style="display:none;">Login with a Third-Party Service.</a>
+</div>
+
+<span class="note"> Do you already have a Plopquiz account? &nbsp; Choose the login service you have previously used.  <br/><a onClick="PrivacyPolicy();">Privacy Policy </a> | <a id="reset">Trouble Logging In? Reset Your Account Access</a> <a id="login_options" style="display:none;">View Login Services</a></span>
+
+
+<div class="ui-dialog-content" style="display:none;" id="privacy_policy" title="Privacy Policy">
+<div style="margin:-10px 0;"></div>
+<p>When you sign-in with a third-party account, we only may access information that you opt-in to share with us. 
+
+<p>We have no access to sensitive information from these accounts, such as your password.</p>
+
+<p>We will <b>not</b> share your personal information without your permission.</p>
+
+</div> 
+
+</div>
+
+{% endblock %}

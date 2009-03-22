@@ -1,0 +1,38 @@
+{% extends "../base.html" %}
+{% block head %}
+	<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/store/take_test.css"/>
+{% endblock %}
+
+
+{% block main %}
+
+
+<div class="purple_box test_subject">
+Take a Test
+</div>
+
+
+<div class="frame_box test_passes">
+<div class="box_header">Remaining Test Passes</div>
+ <h1>{{pass_count}}</h1> 
+ 
+ (purchase test pass link)</div>
+
+<div class="frame_box test_action">
+{% ifequal pass_count 0 %}
+Buy Test Pass
+{% else %}
+ Take Test Now 
+{% endifequal %}
+</div>
+
+
+
+<div class="info_note test_note">For the price of <b>one</b> average University of Phoenix course, you can pay for <b>60</b> Plopquiz Tests. </div>
+
+
+
+
+{% endblock %}
+
+

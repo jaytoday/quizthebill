@@ -1,0 +1,82 @@
+<div class="quiz_frame_header" style="height:65px;">
+        <div class="quiz_frame_logo" id="pq" style="margin-left:50px;">
+                <img src="{{ http_host }}/static/stylesheets/img/quiztaker/pq_logo_h_small.png"/>
+        </div>
+</div>
+<div class="quiz_intro_text" style=" margin-top:7px">
+
+        <div class="quiz_selection" id="end_quiz_panel">
+                <div class="score_result">
+
+                        <div class="score_text">
+                                 <img src="{{ http_host }}/static/stylesheets/img/quiztaker/quiz_completed_checkmark.png" style="margin-left:-30px; margin-top:-40px; margin-bottom:-10px;"/>
+                        </div>
+                        <!-- TODO: Add Continue Button, with close window binding. --> 
+                        <div id="whitewrapper">
+                                <div id="add_success" style="display:none;"> 
+                                        <a id="end_quiz" onclick="redirectHome();" class="answer" href="#">
+                                                <table cellspacing="0" cellpadding="0" border="0" >
+                                                        <tr>
+                                                                <td id="quiz_pink_left"></td>
+                                                                <td id="quiz_pink_main" style="padding:0px;">
+                                                                        <div class="skipitem" id="end_text">Continue</div>
+                                                                </td>
+                                                                <td id="quiz_pink_right"></td>
+                                                        </tr>
+                                                </table>
+                                        </a>
+
+                                </div>
+                                <form action"#" class="signup" name="signup" style="font-size:.8em; display:none;"> {# hidden away, for now. #}
+                                        <fieldset>
+                                                <legend>Register to Save Your Score</legend> 
+                                                <ul id="1">
+                                                        <li>
+                                                                <label for="name">Name:</label>
+                                                                <input class="signup name" type="text" name="name" value="" id="name" onFocus="if (this.value == this.defaultValue) { this.value = ''; }"  />
+                                                        </li>
+                                                        <li>
+                                                                <label for="email">Email:</label>
+                                                                <input class="signup email" type="text" name="email" value="" id="email" onFocus="if (this.value == this.defaultValue) { this.value = ''; }"  />
+                                                        </li>
+                                                </ul>
+                                                <ul id="2" style="display:none;">
+                                                        <li>
+                                                                <label for="occupation">Occupation:</label>
+                                                                <input class="signup occupation" type="text" name="occupation" value="" id="occupation" onFocus="if (this.value == this.defaultValue) { this.value = ''; }"  />
+                                                        </li>
+                                                        <li>
+                                                                <label for="work_status">Work Status:</label>
+                                                                <select name="work_status">
+                                                                        <option>Full-Time</option>
+                                                                        <option>Part-Time</option>
+                                                                        <option>Student</option>
+                                                                </select>
+                                                        </li>
+                                                </ul>
+                                                <ul id="3" style="display:none;">
+                                                        <li>
+                                                                <label for="webpage">Web Page:</label>
+                                                                <input class="signup webpage" type="text" name="webpage" value="http://" id="webpage"  />
+                                                        </li>
+                                                        <li>
+                                                                <label for="location">Location:</label>
+                                                                <input class="signup location" type="text" name="location" value="" id="location" onFocus="if (this.value == this.defaultValue) { this.value = ''; }"  />
+                                                        </li>
+                                                </ul>
+                                                <div class="form_proceed" id='1'><img src="{{ http_host }}/static/stylesheets/img/utils/purple_next.png"></div>
+                                        </fieldset>
+                                <!--     <a id="continue" onclick="SaveScore(signup.email.value);" class="answer" href="#"><table cellspacing="0" cellpadding="0" border="0" ><tr><td id="quiz_purple_left"></td><td id="quiz_purple_main" style="padding:0px; width:50px;"><div class="arrow" style="margin-bottom:-3px;"></div>
+                                <div class="skipitem" style="font-size: 1em;" id="skiptext">Submit</div>
+                                </td><td id="quiz_purple_right"></td></tr></table></a>  -->     
+                                </form>
+                        </div>
+                </div>
+        </div>
+        <!--
+        <div class="quiz_description" style="margin-left:0px; height:130px; width:100px; float:left; ">
+        <div class="quiz_description_text" id="example_1" style="display: none;">  <br/> Try hovering over the items below to preview your choice for the fill-in-the-blank. </div>
+        <div class="quiz_description_text" id="example_2"  >  <br/> Easy, right? <br/><br/> Try clicking one of the items to submit your answer. </div>
+        </div>
+        -->
+</div>

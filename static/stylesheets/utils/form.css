@@ -1,0 +1,44 @@
+form input, form textarea {
+    border: solid 1px #85b1de;
+    background: #fff url('/static/stylesheets/img/base/forms/formbg.gif') repeat-x;
+    background-position: top;
+    margin:2px 0;
+    padding: 2px;
+}
+form input:focus, form textarea:focus {
+    background-image: none;
+    background-color: #ffffff;
+    border: solid 1px #bbbbbb;
+}
+
+
+form li{
+float:left;
+margin:5px 10px;
+}
+
+
+form fieldset{
+border:3px solid #DDDDDD;
+margin:10px 0;
+overflow:hidden;
+padding:0 0 8px;
+}
+
+form fieldset.no_style{
+border: none;
+margin: auto;
+overflow: auto;
+padding: auto;
+}
+
+form legend {
+padding:2px 10px;
+}
+
+
+div.form_error {
+color: red;
+display:none;
+font-size:0.8em;
+}

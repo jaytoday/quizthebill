@@ -1,0 +1,41 @@
+{% extends "takequiz.html" %}
+{% block head %}
+<script type="text/javascript" src="/static/scripts/quiztaker/quizbox.js"></script> 
+<script type="text/javascript" src="/static/scripts/quiztaker/take_quiz.js"></script> 
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/quiz/quiz_page.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/quiz/quiz.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/quiz/quizframe.css"/>
+
+<script type="text/javascript" >
+
+
+$.plopquiz.quizitemList = [
+
+{% for item in quiz_items %}
+        {
+     
+                rpc_url: '/quiztaker/rpc?action=get_quiz&arg0="{{ item.key }}"',
+                url: '/quiz_item/?item_key={{ item.key }}',
+                key: "{{ item.key }}", 
+                answer1: "{{ item.answer1 }}", 
+                answer2: "{{ item.answer2 }}",
+                answer3: "{{ item.answer3 }}",
+                answers: {{ item.answers }},
+                proficiency: '{{ item.proficiency }}',
+                vendor: '{{ vendor }}',
+                item_type:'quiz_item',
+                timed: "timeout",
+                timeout: "skip"
+        },
+{% endfor %} 
+
+
+    
+        {url: "/intro/?page=quiz_complete", item_type:"quiz_complete", noSkip: true, answers: [ "Submit" ] }
+];
+</script>
+{% endblock %}
+
+ {% block login %} {% endblock login %}
+{% block main %}
+{% endblock %}

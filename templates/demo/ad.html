@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Snaptalent Job - Get a Phone Interview With PlopQuiz.</title>
+<link rel="stylesheet" href="/static/stylesheets/demo/publish.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/demo/quiz.css"/>
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/demo/countdown.css"/>
+
+
+<script type="text/javascript" src="/static/scripts/jquery/jquery.js">
+<script type="text/javascript" src="/static/scripts/utils/json2min.js"></script>
+
+
+<script type="text/javascript" src="/static/scripts/jquery/jquery.pngFix.js"></script> 
+<script type="text/javascript" src="/static/scripts/utils/rpc.js"></script>
+
+
+
+<script type="text/javascript" src="/static/scripts/publish.js"></script> 
+<script type="text/javascript" src="/static/scripts/demo/quizbox.min.js"></script> 
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	/*  Load quiz item iframes - static/scripts/quizbox.js redundant  */
+	$("#apply a, #apply_button a, #apply_button_d a, #description_apply").quizbox({
+		'zoomSpeedIn': 400,
+		'zoomSpeedOut': 400,
+		'overlayShow': true,
+		'overlayOpacity': 0.3,
+		'itemLoadCallback': getGroupItems
+	}); 
+});
+
+/* =========== */
+/* = URL Array = */
+/* =========== */
+var quizitemList = [
+        {url: '/intro/?demo=true&page=intro', item_type:'intro', choose_quiz: 'Take Another Quiz'},
+        {url: '/intro/?demo=true&page=instructions', item_type:'instructions', answer1: 'dog ate', answer2: 'web made'},
+        {url: '/intro/?demo=true&page=instructions2', item_type:'instructions2', answer1: 'compilers', answer2: 'interpreters'},
+        {url: '/intro/?demo=true&page=begin_quiz', item_type:'begin_quiz'},
+ 
+ 
+{% for item in quiz_items %}
+        {
+     
+                rpc_url: '/quiztaker/rpc?action=get_quiz&arg0="{{ item.key }}"',
+                url: '/quiz_item/?demo=true&item_key={{ item.key }}',
+                key: "{{ item.key }}", 
+                answer1: "{{ item.answer1 }}",
+                answer2: "{{ item.answer2 }}",
+                answer3: "{{ item.answer3 }}",
+                answers: {{ item.answers }},
+                proficiency: '{{ item.proficiency }}',
+                item_type:'quiz_item'
+        },
+{% endfor %} 
+
+        {url: "/quiz_complete/", item_type:"score" }
+];
+
+function getGroupItems(opts) {
+	jQuery.each(quizitemList, function(i, val) {
+		opts.itemArray.push(val);
+	});
+}
+
+
+
+
+// Server object that will contain the callable methods
+var server = {};
+var item_count = 0;
+
+// Insert 'Add' as the name of a callable method
+InstallFunction(server, 'AddScore', 'quiztaker');
+InstallFunction(server, 'Init', 'quiztaker');
+
+
+function SubmitScore(ans, key) {
+	server.AddScore(ans, "1", key, "", onAddSuccess);
+}
+
+function doInit() {
+        server.Init();
+}
+
+function onAddSuccess(response)
+{
+}
+</script>
+
+
+
+</head>
+<body id="" onload="">
+
+
+<div id="content">
+<div id="sidebar">
+	<ul id="sidebar_list">
+    	<li name="bolder">
+			<a onclick="boldme(this)" style="font-weight:bold;text-decoration: none;" id="tab_overview" href="#view_overview">Overview</a>
+		</li>
+        <li name="bolder">
+        	<a onclick="boldme(this)" id="tab_description" href="#view_description">Job Description</a>
+        </li>
+        <li name="bolder">
+        	<a onclick="boldme(this)" href="#view_images" id="tab_images">Images and Photos</a>
+        </li>
+        <li name="bolder">
+			<p id="apply"><a id="tab_apply"  href="javascript:;" style="color:#fc1a4a !important;"><strong>Apply now!</strong></a></p>
+		</li>
+        <li>
+        	<a href="http://www.addthis.com/bookmark.php" onclick="addthis_url='http://snaptalent.com/ads/234/'; addthis_title=document.title; return addthis_click(this);" target="_blank">
+            	Bookmark<img src="http://s9.addthis.com/button1-bm.gif" width="125" height="16" border="0" alt="Bookmark and Share" class="none"/>
+            </a>
+			<script type="text/javascript">var addthis_pub = 'snaptalent';</script><script type="text/javascript" src="http://s9.addthis.com/js/widget.php?v=10">
+            </script>
+		</li>
+	</ul>
+</div>
+<div id="container">
+	<div id="view_overview" class="frame">
+    <div class="padded">
+    	<div class="ovr_logo">
+        	<a onclick="log(2)" href="/ads/234/?c=25468" target="_blank">
+            	<!--img src="//media.snaptalent.com/uploaded/234/images/176_l.png" alt="" id="logo_img" !-->
+            </a>
+		</div>
+   		<div class="ovr_title">
+        	<a class="title" onclick="log(2)" href="/ads/234/?c=25468" target="_blank">
+			Take the Co-Founder Quiz and Earn an Interview.
+			</a><br />
+			at <a class="minititle">PlopQuiz</a> in <span class="minititle">San Francisco, CA </span>
+		</div>
+        <div class="ovr_text">
+			We're seeking an exceptional person for our team.<br/><br/>
+			To maximize our time talking with qualified candidates, we want to first make sure everyone we speak with is proficient in one or more specific areas of knowledge.<br /><br />
+			These areas are diverse, but are alike in that they are all without a useful standard for comparing candidates. They evolve too quickly for traditional certifications.<br /><br />
+			Instead of manually writing an assessment, we decided to put our self-generating quiz software to the test.<br /><br />
+           	&hellip; <a href="#view_description" onclick="boldme('tab_description')">(see more)</a>
+		</div>
+        <div class="ovr_list">
+        	<h3>Photos</h3>
+            <a href="#view_images" onclick="boldme('tab_images')">
+            	<img src="http://farm2.static.flickr.com/3216/2816429545_c6ec878e03_s.jpg" class="photo" id="photo" alt="" />
+       		</a>
+		</div>
+        <div class="ovr_list" id="bookmark"> 
+    		<h3>Bookmark</h3>
+            <a href="http://www.addthis.com/bookmark.php" onclick="addthis_url='http://snaptalent.com/ads/234/'; addthis_title=document.title; return addthis_click(this);" target="_blank">
+                <img src="//media.snaptalent.com/images/bookmarks.png" border="0" alt="Bookmark and Share" style="vertical-align:middle" />
+            </a>
+		</div>
+
+<!-- <div class="ovr_apply"><input type="text" id="id_email2" onfocus="this.value=''" onchange="$('id_email').value=this.value;" value="enter e-mail address" style="width: 300px;" />
+<span id="apply_button">
+<a href="javascript:;" style="text-decoration:none"><input type="button" value="Apply!" style="width: 100px;" /></a>
+</span>
+</div> -->
+
+
+</div></div>
+
+<div id="view_description" class="frame scroll">
+<div class="padded">
+	<h3 class="minititle" id="description_title" style="margin-top: 0px;">About PlopQuiz</h3>
+	<p>We make smart quizzes for smart people.</p>
+	<p>Our quizzes are particularly smart because nobody writes them. Instead, they are crafted from open scholarly resources such as Wikipedia.</p>
+	<p>Students can take quizzes and build an academic profile that makes for a great upgrade to a resume. Top achieving students can earn awards and sponsorships. </p>
+	<p>Sponsors can use PlopQuiz to demonstrate social responsibility and connected with self-motivated learners. </p>
+	
+	<br/>
+	<h3 class="minititle" id="description_title" style="margin-top:5px;" >About This Quiz</h3>
+	<p>When you apply for an interview, you'll have a chance to try a demo of our product.</p>
+	<p>Taking the quiz will only require a couple minutes of your time, and will give you a helpful reference point for your interview.  </p>
+	<br/>
+	<a  href="javascript:;" id="description_apply" style="text-decoration:none">
+    	<h3 class="minititle" style="color:#fc1a4a !important; font-size:1.5em; margin-top:25px;" id="description_title" >
+        Take the Co-Founder Quiz</h3>
+	</a>
+</div>
+</div>
+<div id="view_images" class="frame" onclick="image_next()">
+	<div class="padded"><div class="bphoto"><img id="bphoto" class="clickable" alt="" />
+</div>
+<div class="rphoto">
+	<a onmouseover="image_swap(this)" name="image_link"><img src="http://farm2.static.flickr.com/3138/2816412463_5c4e709b24_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm2.static.flickr.com/3184/2816412435_0d5afe948f_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm1.static.flickr.com/124/345712907_4f6291da5f_s.jpg" class="photo" id="photo" alt="" /></a>	
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm4.static.flickr.com/3216/2816429545_c6ec878e03_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm1.static.flickr.com/140/399863961_283d861ea5_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm2.static.flickr.com/1405/737977421_9d7df52d11_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm4.static.flickr.com/3259/2816429499_bd8a6794e8_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm3.static.flickr.com/2105/2205481110_99aaf1e19d_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm4.static.flickr.com/3224/2816429581_8da06ce5a5_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm4.static.flickr.com/3221/2849670904_c434143bd1_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm4.static.flickr.com/3204/2817262594_a083a1d58c_s.jpg" class="photo" id="photo" alt="" /></a>
+    <a onmouseover="image_swap(this)" name="image_link"><img src="http://farm3.static.flickr.com/2333/2101999317_bbc34fcdba_s.jpg" class="photo" id="photo" alt="" /></a>
+</div>
+
+
+<!-- 
+	<script type="text/javascript" charset="utf-8" src="//media.snaptalent.com/scripts/publish.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    load_image_swap();
+    WTF_KEY = 1;
+    boldme('tab_overview');
+    
+    //highlight('VirtuOz Inc.')
+	</script> 
+-->
+<img id='qw' class='none' alt='' />
+</body>
+</html>

@@ -1,0 +1,104 @@
+{% extends "../base.html" %}
+{% block title %}
+#QuiztheBill
+{% endblock %}
+		{% block login %}{% endblock login %}
+		
+{% block head %}
+
+<style type="text/css"> 
+{% include "../../static/stylesheets/utils/form.css" %}
+{% include "../../static/stylesheets/quiz_the_bill/frontpage.css" %}
+</style> 
+
+
+ 
+ <script type="text/javascript"> {% include "frontpage.js" %}</script>
+{% endblock %}
+
+
+{% block main %}
+
+<div id="header">
+<h2>
+<span style="font-size: 0.8em;">#</span><span style="font-size: 1.3em;">Q</span>uiz<span style="margin: 0pt 9px; font-size: 0.6em;">the</span><span style="font-size: 1.3em;">B</span>ill
+</h2>
+</div>
+<div id="sub_header">Because Congress Needs Help With Their Homework</div>
+
+<div><script src="{{ http_host}}/js/quiz/{{ featured_subject }}" type="text/javascript"></script></div>
+
+<div id="intro" class="frame_box panel">
+
+	<p>Elected officials should be more accountable for understanding legislation before voting for it.</p>
+
+	<p><a style="font-size: 1.1em;"href="http://www.readthebill.org">ReadtheBill.org</a> is petitioning for a law  to give legislators and the rest of us 72 hours of access to a bill before its vote.</p>
+
+	 
+	  
+	 
+	<a target="_blank" href="http://www.readthebill.org"> <button class="" style="margin: 14px 130px; padding: 11px; background: rgb(224, 224, 224) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 325px; width: 550px;">
+	 
+	 <img style="margin: 60px 0pt 110px; float: left;" src="http://media.sunlightprojects.org/readthebill/images/v2/72_button_b.png"/>
+	  <img style="margin-right: 0pt; position: absolute; margin-left: -110px; margin-top: 150px;" src="http://media.sunlightprojects.org/readthebill/images/v2/72_button.png"/>
+
+<object width="400" height="302"><param value="true" name="allowfullscreen"/><param value="always" name="allowscriptaccess"/><param value="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" name="movie"/><embed width="400" height="302" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1"/></object>
+</button>
+
+</a>
+	 
+	<p>The ReadtheBill movement has inspired us to build a public resource of quizzes for federal bills.</p>
+<p>But we need your help.</p>
+	<p class="note" style="margin: -10px 0pt; font-weight: bold; font-size: 50px ! important;">Contribute a quiz item. <br/> Click one of the bills below.</p>
+	
+</div>
+
+<div class="info_note panel" id="updates">
+<div id="first_response"><button><img src="/static/stylesheets/img/utils/purple_next_tiny.png"/>Send Me Updates About New Bills</button></div>
+
+
+<input type="text"/></div>
+
+
+<div class="panel" id="bills">
+{% for bill in bills %}
+<a href="/bill/{{ bill.title }}">
+<div class="bill">
+<div class="image"><img src="http://govpix.appspot.com/{{ bill.sponsor_name }}" width="70" /></div>
+<div class="title_container">
+<div class="title">{{ bill.title }}</div>
+</div>
+<div style="clear:both"></div>
+<div class="stats_container"><div class="stats">
+<li><strong>Sponsor:</strong>{{ bill.sponsor }}</li>
+<li><strong>Introduction Date:</strong>{{ bill.introduction_date }}</li>
+<li><strong>Status:</strong>{{ bill.status }}</li>
+<li><strong>Latest Action:</strong>{{ bill.latest_action }}</li>
+
+{% if bill.next_step %} <li><strong>Next Step:</strong>{{ bill.next_step }}</li> {% endif  %}
+
+</div></div>
+
+
+</div>
+
+
+</a>
+
+{% endfor %}
+</div>
+
+
+{% endblock %}
+
+
+{% comment %}
+
+
+
+{# Buttons and Bling #}
+<a href="http://www.opencongress.org"><img src="http://www.opencongress.org/images/logo_button_120px.gif" alt="OpenCongress.org" /></a> <a href="http://www.opencongress.org"><img src="http://www.opencongress.org/images/logo_button_80px.gif" alt="OpenCongress.org" /></a>
+
+
+
+{% endcomment %}

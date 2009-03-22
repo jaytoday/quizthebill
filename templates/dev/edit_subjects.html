@@ -1,0 +1,27 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+<title>Edit Subjects</title>
+</head>
+<html><body>
+
+{% for p in proficiencies %}
+<h1>{{ p.name }}</h1>
+{% for i in p.images %}
+large image
+<img src='/image/subject/?img_id={{ i.key }}&size=large'/>
+small image
+<img src='/image/subject/?img_id={{ i.key }}&size=small'/>
+{% endfor %}
+
+{% endfor %}
+</body></html>
+
+

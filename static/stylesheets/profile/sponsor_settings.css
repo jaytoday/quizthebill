@@ -1,0 +1,53 @@
+div#edit_sponsor_settings{
+width:600px;
+float:left;
+margin:30px 0 0 50px;
+overflow:hidden;
+}
+
+form fieldset{
+margin-bottom: 5px !important;
+}
+
+form fieldset#customize_message{
+height: 350px; float: left;
+}
+
+form fieldset#quiz_subjects{
+float:left;
+height:351px;
+margin:-369px 0 auto 347px;
+width:250px;
+}
+
+form fieldset span{ /* this could be used for other forms */
+ margin: 0px 10px; line-height:1.2em; display:block;
+}
+
+textarea#sponsor_message{
+padding: 10px;
+width:290px;
+height:212px;
+}
+
+
+
+div#submit_form{
+width:200px; float:right; margin: 160px 30px 0px 0px;
+}
+
+div#submit_form #submit{
+margin:0px 0px 10px;
+}
+
+
+div#sponsor_form_error {
+margin:20px 0 0 -25px;
+line-height:1.2em;
+}
+
+div#sponsor_form_cancel{
+margin: -15px 0px 0px 63px;
+position: absolute;
+width: 15px;
+}

@@ -1,0 +1,19 @@
+<span class="header">Topic</span>
+
+<select name="item_topic" class="item_topic">
+<option></option>
+<option>New Topic</option>
+
+{% for topic in subject.topics %}
+
+<option value="{{ topic.key }}" {% ifequal topic.name item.topic.name %}selected{% endifequal %} {% ifequal topic.name new_topic.name %}selected{% endifequal %}>
+{{ topic.name }}</option>
+
+{% endfor %}
+
+</select>
+
+<div class="edit_topic" style="display:none;"><input class="new_item_topic" type="text"><button>OK</button></div>
+
+<div class="loading" style="display:none;"><img width="22" height="22" src="/static/stylesheets/img/ajax-loader.gif"/><img  width="22" height="22" src="/static/stylesheets/img/ajax-loader.gif"/></div>
+

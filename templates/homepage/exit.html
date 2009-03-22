@@ -1,0 +1,46 @@
+{% extends "../base.html" %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/homepage.css"/>
+<script type="text/javascript" src="/static/scripts/homepage/homepage.js"></script>
+
+<!-- freebase -->
+<script type="text/javascript" src="/static/scripts/freebase-suggest/freebase.suggest.js"></script>
+<link type="text/css" rel="stylesheet" href="/static/scripts/freebase-suggest/dist/css/freebase-controls.css" />
+  <style type="text/css"> 
+  .fbs-li-types { display:none; }   /* if you want to hide the type info in the suggest popup */
+ </style>
+ 
+
+{% endblock %}
+
+{% block login %}{% endblock %}
+
+
+{% block main %}
+										<a style="float:right; display:block;" onclick="window.open('http://www.co2stats.com/certpro.php?s=1217&ref=http://www.plopquiz.com','popup','width=550,height=515,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0');return false;" href="http://www.co2stats.com/certpro.php?s=1217&ref=http://www.plopquiz.com/">
+<img border="0" src="/static/stylesheets/img/homepage/green_site.png"/>
+</a>
+					
+
+		<div class="left">		
+						<div id="logo">
+							<img src="/static/stylesheets/img/homepage/horizontal_logo.png" alt="" />
+						</div>
+						<div id="intro">
+							<div id="smart">show</div>
+						
+							<div id="blinder"> what&nbsp;  &nbsp;   you</div>
+							<div id="motto">
+								<span class="blank"><span class="smart_span_holder" id="smart1">show</span></span>&nbsp;&nbsp;what   you
+								<span class="blank" id="two"><span class="smart_span_holder">show</span></span> 
+							</div>
+			
+						</div>
+		</div>	
+
+
+
+
+
+{% endblock %}

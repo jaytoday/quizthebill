@@ -1,0 +1,38 @@
+
+{# if we wanted to get feed items via ajax, we could just use this template to load the HTML for each item #}
+
+<div class="info_note action_item">
+{% ifequal action.sponsor None %} {# This is an award #}
+
+    <div class="gray_square_box is_winner">
+    <img src="/image/profile/?img_id={{ action.winner.photo.key }}&size=large"/>
+    <span class="img_bottom">{{ action.winner.nickname }}</span></div>
+
+<span class="action_type">Earned An Award For</span>
+<span id="subject" class="action_date info_note">{{ action.date|date:"F jS" }}</span>
+
+  <div class="selection_box is_subject sliderImage">
+<img src="{{ http_host}}/image/subject/?img_id={{ action.proficiency.images.1.key }}&size=small"/>
+<span class="img_bottom">{{ action.proficiency.name }}</span></div>
+
+
+
+ 
+{% else %}
+
+    <div class="gray_square_box is_recipient">
+    <img src="/image/profile/?img_id={{ action.recipient.photo.key }}&size=large"/>
+    <span class="img_bottom">{{ action.recipient.nickname }}</span></div>
+    
+
+<span class="action_type sponsored_by">Earned A Sponsorship From</span>
+
+<span class="action_date info_note">{{ action.date|date:"F jS" }}</span>
+
+    <div class="gray_square_box is_sponsor">
+    <img src="/image/profile/?img_id={{ action.sponsor.photo.key }}&size=large"/>
+    <span class="img_bottom">{{ action.sponsor.nickname }}</span></div>
+{% endifequal %}
+
+
+</div>

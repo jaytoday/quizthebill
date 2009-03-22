@@ -1,0 +1,24 @@
+    
+	
+		      <ol class="sliderContent" id="subject_{{ s.subject.tag }}Content">
+		                              {# default #}
+		                        <li style="display:none;" class="bigsliderImage subject_{{ s.subject.tag }}Image">
+		                            <img src="{{ http_host }}/image/subject/?img_id=default&size=large"/>
+		                            <span class="slider img_{% cycle top,bottom %} span_0">
+		                            <span class ="subject_header">{{ s.subject.name }} </span>
+
+		                            </span>
+		                        </li>
+
+		      {% for img in s.subject.images %}
+		                        <li style="display:none;" class="bigsliderImage subject_{{ s.subject.tag }}Image">
+		                            <img src="{{ http_host }}/image/subject/?img_id={{ img.key }}&size=large"/>
+		                            <span class="slider img_{% cycle top,bottom %} span_{{ forloop.counter }}">
+		                            <span class ="subject_header">{{ s.subject.name }} </span>
+
+		                            </span>
+		                        </li>
+		{% endfor %}
+		                        <div class="clear subject_{{ s.subject.tag }}Image"></div>
+		                    </ol>
+	

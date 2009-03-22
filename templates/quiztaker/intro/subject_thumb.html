@@ -1,0 +1,39 @@
+    <div id="subject_thumb_{{ forloop.counter0 }}" class="proficiency_pic selection_box subject_thumb">
+                        <ol class="subject_thumb_{{ forloop.counter0 }}Content" id="subject_thumb_{{ forloop.counter0 }}Content">
+                        <!-- default -->
+                        <li style="display:none;" class="smallsliderImage subject_thumb_{{ forloop.counter0 }}Image" id="{{ forloop.counter }}" >
+                            <img src="{{ http_host}}/image/subject/?img_id=default&size=small"/>
+                            <span class="slider img_{% cycle top,bottom %}">
+                            <span class="subject_thumb_name"> {{ p.name }} </span>
+                            </span>
+                        </li>
+                        <!-- enddefault -->
+      {% for img in p.images %}
+                        <li style="display:none;" class="smallsliderImage subject_thumb_{{ forloop.parentloop.counter0 }}Image" id="{{ forloop.parentloop.counter }}" >
+                            <img src="{{ http_host}}/image/subject/?img_id={{ img.key }}&size=small"/>
+                            <span class="slider img_{% cycle top,bottom %}">
+                            <span class="subject_thumb_name"> {{ p.name }} </span>
+                            </span>
+                        </li>
+{% endfor %}
+                        <div class="clear subject_thumb_{{ forloop.counter0 }}Image"></div>
+                    </ol>
+    </div>
+
+
+
+
+
+
+
+<!--
+
+                        <li class="bigsliderImage subject_{{ forloop.parentloop.counter }}Image">
+                            <img src="{{ http_host }}/image/subject/?img_id={{ img.key }}&size=large"/>
+                            <span class="slider img_{% cycle top,bottom %} span_{{ forloop.counter }}">
+                            <span class ="subject_header">{{ p.name }} </span>
+                           
+                            </span>
+                        </li>
+
+-->

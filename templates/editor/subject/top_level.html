@@ -1,0 +1,87 @@
+	 <div class="subject_images">
+	   {% include "subject/subject_images.html" %}
+	 </div>
+
+		{% ifequal s.is_member "admin" %}
+		<div class="upload_picture" id="{{ s.subject.name }}"><button id="button_{{ s.subject.name }}">Upload a Picture</button></div>
+		{% endifequal %}
+
+
+	<ul class="subject_nav">
+		<li class="ui-tabs-nav-item" id="profile_nav"><a href="#description_{{ forloop.counter }}">Description</a></li>
+		 <li class="ui-tabs-nav-item"><a href="#links_{{ forloop.counter }}">Links</a></li> 
+		 <li class="ui-tabs-nav-item"><a href="#video_{{ forloop.counter }}">Video</a></li> 
+	</ul>
+
+
+ <div id="description_{{ forloop.counter }}" class="blurb middle description">
+	<div class="blurb_text" >
+	{{ s.subject.blurb|escape }}
+	</div>
+	<textarea class="description" style="display:none" wrap="SOFT" maxlength="250" cols="15" rows="16" name="description_{{ forloop.counter }}" id="description_text_{{ forloop.counter }}"></textarea>
+	<div class="limit" style="display:none" id="limit_{{ forloop.counter }}"></div>
+
+{% ifequal s.is_member "admin" %}
+	<div class="description_footer" >
+		<button class="edit"><img src="/static/stylesheets/img/utils/purple_next_tiny.png" />Edit Description</button>
+		<button class="save hide" id="{{ s.subject.name }}" style="display:none;"><img src="/static/stylesheets/img/utils/purple_next_tiny.png" />Save Changes</button>
+		 </div>
+{% endifequal %}
+	</div> {# end description blurb #}
+	
+
+ <div id="links_{{ forloop.counter }}" class="blurb middle" >
+ 
+ <div class="links_container" id="{{ s.subject.name }}"> 
+ 
+ {% include "subject/links_list.html" %}
+ 
+ </div>
+
+{% ifequal s.is_member "admin" %}
+<div class="link_footer" >
+		<button class="add_link"><img src="/static/stylesheets/img/ui/add.gif" />Add New Link</button>
+		<div class="new_link hide">
+		<input type="text" class="url">
+		<input type="text" class="title">
+		<button class="save_link" ><img src="/static/stylesheets/img/utils/purple_next_tiny.png" />OK</button>
+		 </div>
+</div>
+{% endifequal %} 
+
+</div> {# end links blurb #}
+
+
+ <div id="video_{{ forloop.counter }}" class="blurb middle">
+	<div class="video_container" >
+	
+	 {% include "subject/video_object.html" %}
+	 
+	</div>
+	
+	<textarea style="display:none;" wrap=SOFT maxlength="250" cols="15" rows="16" name="description_{{ forloop.counter }}" id="description_{{ forloop.counter }}"></textarea>
+	<div class="limit" style="display:none" id="limit_{{ forloop.counter }}"></div>
+
+{% ifequal s.is_member "admin" %}
+	<div class="video_footer" >
+		<button class="change_playlist"><img src="/static/stylesheets/img/utils/purple_next_tiny.png" />Edit Playlist URL</button>
+		<div class="change_playlist hide" style="display:none;">
+		<input type="text" class="playlist" value="http://www.youtube.com/view_play_list?p={{ s.subject.video_html }}">
+		<button class="save_video" id="{{ s.subject.name }}" ><img src="/static/stylesheets/img/utils/purple_next_tiny.png" />Save Changes</button>
+		</div>
+		 </div>
+{% endifequal %} 
+		 
+	</div> {# endblurb #}	
+	
+
+<div class="blurb side"> 
+ <div class="subject_stats">
+ <div class="subject_stat popularity"><h3>Popularity</h3>  <div class="statometer" ><img src="http://chart.apis.google.com/chart?chs=85x55&cht=gom&chd=t:{{ s.subject.popularity }}&chco=DDDDDD,00ea00&chf=bg,s,DDDDDD"/> </div> </div>
+ <div class="subject_stat difficulty"><h3>Difficulty</h3>  <div class="statometer" ><img src="http://chart.apis.google.com/chart?chs=85x55&cht=gom&chd=t:{{ s.subject.difficulty }}&chco=DDDDDD,00ea00&chf=bg,s,DDDDDD"/> </div></div>
+ 
+ {# Maybe this could be a little feed module of people who have most recently taken this quiz? #}
+ </div>  </div>
+ 
+ 
+ 

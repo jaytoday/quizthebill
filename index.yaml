@@ -1,0 +1,61 @@
+indexes:
+
+- kind: ItemScore
+  ancestor: no
+  properties:
+  - name: quiz_taker
+  - name: date
+    direction: desc
+
+
+- kind: QuizItem
+  ancestor: no
+  properties:
+  - name: slug
+  - name: index
+  - name: answers
+  - name: proficiency   
+
+
+- kind: Proficiency
+  properties:
+  - name: name
+  - name: date
+    direction: desc
+
+
+
+- kind: Proficiency
+  properties:
+  - name: name
+  - name: status
+  - name: modified
+    direction: desc
+
+- kind: Proficiency
+  properties:
+  - name: status
+  - name: modified
+    direction: desc
+
+- kind: Proficiency
+  properties:
+  - name: status
+  - name: name
+    direction: desc
+
+
+
+- kind: ProficiencyTopic
+  properties:
+  - name: proficiency
+  - name: date
+    direction: desc
+
+
+- kind: Sponsorship
+  properties:
+  - name: sponsor
+  - name: date
+
+

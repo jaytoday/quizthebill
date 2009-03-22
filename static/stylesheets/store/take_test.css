@@ -1,0 +1,43 @@
+
+div.test_subject{
+float:left;
+height:250px;
+margin:50px 0 0 240px;
+width:350px;
+}
+
+div.test_passes{
+float:right;
+height:130px;
+margin:80px 60px;
+width:170px;
+}
+
+div.test_passes h1{
+font-size:3.8em;
+margin:30px 65px;
+}
+
+div.test_action{
+float:left;
+height:40px;
+margin:0 240px;
+width:340px;
+}
+
+
+div.test_note{
+float:right;
+font-size:0.8em;
+line-height:1.1em;
+margin:-100px 50px;
+width:200px;
+}
+
+
+.box_header
+{
+float:left;
+font-size:2em;
+margin:0 14px;
+}

@@ -1,0 +1,31 @@
+ <bill>
+    <bill-type>h</bill-type>
+    <bookmark-count-1 type="NilClass">7</bookmark-count-1>
+    <id type="integer">55703</id>
+    <introduced type="integer">1236657600</introduced>
+    <last-speech type="integer" nil="true"></last-speech>
+    <last-vote-date type="integer" nil="true"></last-vote-date>
+    <last-vote-roll type="integer" nil="true"></last-vote-roll>
+    <last-vote-where nil="true"></last-vote-where>
+    <lastaction type="integer">1236657600</lastaction>
+    <number type="integer">1409</number>
+    <pl nil="true"></pl>
+    <plain-language-summary>This bill (aka "card check") would change the rules governing the formation of unions, the way first contracts between unions and employers are negotiated, and how employees' rights are enforced.&lt;br&gt;&lt;br&gt; 
+
+Under the bill, workers would be able to decide whether to hold a secret ballot vote on union formation after a majority of employees have signed union authorization cards, or to have the union certified based on the cards alone.  Under the current rules, employers have the power to make that decision.  The bill also designates a time line for first contracts to be drawn up between unions and employees and stipulates that if no deal is reached within 120 days, an arbitration panel will render a decision that will be binding for two years.  Finally, it would increase the fines employers must pay if found guilty of violating their employees' right to unionize.&lt;br&gt;&lt;br&gt;
+
+This bill is organized labor's number one legislative priority, and it is vigorously opposed by the business lobby.  Democratic leader are expected to bring it to a vote in the Senate sometime this summer.  The big question regarding its passage is whether or not the Democrats can find 60 votes in favor of breaking an inevitable Republican filibuster.  The Senate version is &lt;a href="http://www.opencongress.org/bill/111-s560/show"&gt;S. 560&lt;/a&gt;.</plain-language-summary>
+    <session type="integer">111</session>
+    <sponsor-id type="integer">400278</sponsor-id>
+    <topresident-date type="integer">1236657600</topresident-date>
+    <topresident-datetime type="date">2009-03-10</topresident-datetime>
+    <total-comments type="NilClass" nil="true"></total-comments>
+    <total-count type="NilClass">36</total-count>
+    <total-opposed type="NilClass">25</total-opposed>
+    <total-support type="NilClass">11</total-support>
+    <updated type="datetime">2009-03-11T11:05:19-05:00</updated>
+    <vote-count-1 type="NilClass">10</vote-count-1>
+    <title-full-common>H.R.1409 Employee Free Choice Act of 2009</title-full-common>
+    <status>Introduced</status>
+    <ident>111-h1409</ident>
+  </bill>

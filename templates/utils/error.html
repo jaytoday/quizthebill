@@ -1,0 +1,25 @@
+{% extends "../base.html" %}
+
+
+{% block main %}
+
+			<div class="error_logo">
+							<img src="/static/stylesheets/img/homepage/horizontal_logo.png" alt="" />
+						</div>
+
+{% ifequal error_type "quiz" %}
+
+<div class="error_text">
+Your quiz broke. We'll investigate and fix the problem.
+<br/><br/>
+<span style="font-size: 2em;"><a href="{{ http_host }}/quiz/">Take Another Quiz</a></span>
+<br/><br/>
+Contact Us: <a href="mailto://support@plopquiz.com">support@plopquiz.com</a>
+</div>
+
+{% endifequal %}
+
+
+
+
+{% endblock %}

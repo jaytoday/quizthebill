@@ -1,0 +1,40 @@
+--------------------------------
+Freebase input controls
+
+suggest:
+	for autocompleting on a Freebase topic
+
+select:
+	for an enumeration of Freebase topics of a certain type
+	
+	
+http://www.freebase.com
+--------------------------------
+
+What you need to build:
+ - access to common UNIX commands (like 'make', 'mkdir', 'rm', 'cat', and 'echo')
+
+How to build:
+
+In the main directory of the distribution (the one that this file is in), type
+the following to make all versions of Freebase input controls.
+  make
+
+make
+  Contains all Freebase input controls like suggest and select
+  Makes: ./dist/freebase.controls.js
+
+make suggest
+  Freebsae suggest control (autocomplete on a Freebase topic)
+  Makes: ./dist/freebase.suggest.js
+
+make select
+  Freebsae select control (enumeration of Freebase topics of a certain type)
+  Makes: ./dist/freebase.select.js
+
+Finally, you can remove all the built files using the command:
+  make clean
+
+If you have any questions, please feel free to ask them on the Freebase dev
+mailing list, which can be found here:
+	http://lists.freebase.com/mailman/listinfo/developers

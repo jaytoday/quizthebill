@@ -1,0 +1,142 @@
+
+
+div.login_box{
+height:375px;
+margin:70px 180px;
+position:absolute;
+width:500px;
+}
+
+div.login_box h2{
+font-size: 1.3em;
+float:left;
+margin:13px 3px;
+}
+
+div.login_notice{
+margin:25px 255px 10px;
+position:absolute;
+text-align:center;
+width:350px;
+}
+
+div#proxy_login, div#reset_account{
+height: 230px;
+margin:10px 0 0;
+}
+
+
+div#reset_account div#submit_email, div#reset_account div#submit_email_success{
+height:55px;
+padding-top:20px;
+}
+
+div#reset_account div#submit_email button#submit{
+margin: -5px 3px;
+}
+
+
+div#reset_account div#submit_email_success div{
+font-size:1.5em;
+line-height:1.2em;
+margin: -10px 10px;
+}
+
+div#reset_account div#error{
+color:red;
+font-size:0.8em; 
+margin: /* -28px 0 0 100px */ 0;
+position:absolute;
+width: 370px;
+}
+
+div#reset_account div#checking{ font-size:0.8em; }
+
+
+div#reset_account div#checking img { margin: 0pt 10px 0pt 0pt; }
+
+
+div#reset_account div#reset_content{
+font-size:1.2em;
+line-height:1.3em;
+padding:10px 20px
+}
+
+div#pq_login_link{
+margin: 10px 0px; position: absolute; font-weight: bold;
+width:400px;
+}
+
+div#pq_login_wrapper{
+height:230px;
+position:absolute;
+top:60px;
+width:490px;
+}
+
+span.note{
+float:left;
+font-size:0.7em;
+line-height:1.8em;
+margin:30px 3px;
+text-align:center;
+width:460px;
+}
+span.note a{ font-size: 1.1em; }
+
+div#signup_box{
+height:240px;
+margin:100px 180px;
+position:absolute;
+width:500px;
+}
+
+
+div#signup_box label{ position:absolute;}
+
+div#signup_box label#name{ margin:25px 4px; }
+
+div#signup_box label#email{ margin:7px 2px; }
+
+#submit_nickname{
+position:absolute; margin:200px 0 0 510px;
+}
+
+input#nickname{
+font-size:2.5em;
+margin: 40px 0 60px;
+width:280px;
+}
+
+input.email_address{
+font-size:1.2em;
+margin:24px -1px;
+padding:4px;
+width:273px;
+}
+
+div#notice{
+font-size:1em;
+margin:-55px 5px 0;
+height:15px;
+}
+
+span#available{ color:green; }
+span#not_available, span#too_short{ color:red; }
+
+span#checking { font-size:0.8em; }
+span#checking img{ margin: 0 10px 0 0; }
+
+
+h2#header{ font-size: 1.8em; }
+
+
+#signup_reminder{
+left:220px;
+position:absolute;
+text-align:center;
+top:400px;
+width:400px;
+}
+
+

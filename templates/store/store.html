@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+{% block head %}
+	
+{% endblock %}
+
+
+{% block main %}
+
+
+<div class="frame_box">
+{{ checkout_button }} 
+
+
+<link rel="stylesheet" href="https://checkout.google.com/seller/accept/s.css" type="text/css" media="screen" />
+<script type="text/javascript" src="https://checkout.google.com/seller/accept/j.js"></script>
+<script type="text/javascript">showMark(2);</script>
+<noscript><img src="https://checkout.google.com/seller/accept/images/ht.gif" width="182" height="44" alt="Google Checkout Acceptance Mark" /></noscript>
+</div>
+
+
+
+{% endblock %}

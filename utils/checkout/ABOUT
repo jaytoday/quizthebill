@@ -1,0 +1,11 @@
+This a web2py plugin to bring the Google Checkout functionality to web2py.
+
+Features:
+
+1) Support for both Level 1 (shopping cart submission) and Level 2 (notifications)
+
+2) Works on the Google App Engine
+
+3) Includes a sample model/view/controller
+
+Developed by Massimo Di Pierro ad based on the gchecky library developed by EgvenlyTarassov.

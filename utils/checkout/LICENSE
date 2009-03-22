@@ -1,0 +1,3 @@
+The modules/gchecky files are based on the gchecky library developed by EgvenlyTarassov <etarassov@gmail.com>, modified by Massimo Di Pierro to work on the Google App Engine, and released under the Apache license.
+
+The rest of the code in this appliance was released by Massimo Di Pierro and is released under a triple license to avoid compatibility issues: Apache, BSD, GPL2.

@@ -1,0 +1,300 @@
+/* Global Resets */
+
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input {
+	margin: 0;
+	padding: 0;
+}
+fieldset,homepage {
+	border: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:focus {
+	outline: 0;
+}
+
+sub, sup {
+	font-size: 8px;
+	line-height: 0;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/* Liquid Sitelet Box */
+.clear { clear: both; }
+.sitelet .left { float: left; }
+.sitelet .right { float: right; }
+.sitelet .top, .sitelet .bottom { position: relative; }
+
+.sitelet .top .liquid { background:url(/static/stylesheets/img/base/sitelet-top.png) repeat-x; }
+.sitelet .bottom .liquid { background:url(/static/stylesheets/img/base/sitelet-bottom.png) repeat-x; }
+.sitelet .middle .wrap1 { background: url(/static/stylesheets/img/base/sitelet-left.png) repeat-y top left; }
+.sitelet .middle .wrap2 { background: url(/static/stylesheets/img/base/sitelet-right.png) repeat-y top right; }
+.sitelet .corner {
+	width: 11px;
+	height: 11px;
+	background: url(/static/stylesheets/img/base/sitelet-corners.png) no-repeat;
+}
+.sitelet .top {	
+	height: 11px; 
+}
+.sitelet .bottom {
+	height: 35px;
+}
+.sitelet .top .liquid{
+	margin: 0px 11px;
+	height: 11px;
+}
+.sitelet .bottom .liquid {
+	margin: 0px 11px;
+	height: 35px;
+}
+.sitelet .top .left.corner {	background-position: 0px 0px; }
+.sitelet .top .right.corner { background-position: -11px 0px; }
+.sitelet .bottom .left.corner { 
+	background-position: 0px -11px; 
+	height: 35px;
+}
+.sitelet .bottom .right.corner { 
+	background-position: -11px -11px; 
+	height: 35px;
+}
+.sitelet .middle .content {
+	background: #F7F5F4;
+	margin: 0px 11px;
+	overflow: hidden;
+}
+
+/* Homepage */
+
+
+body {
+	background: #9ed5ff url(/static/stylesheets/img/base/bg.png) bottom left repeat-x;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+#viewport {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#clouds-near, #clouds-far {
+	position: absolute;
+	top: 15%;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+#clouds-far {
+	background:url(/static/stylesheets/img/base/clouds-far.png) repeat-x;
+	z-index: 10;
+	top: 12%;
+}
+#clouds-near {
+	background:url(/static/stylesheets/img/base/clouds-near.png) repeat-x;
+	z-index: 20;
+}
+#land {
+	position: absolute;
+	width: 100%;
+	height: 92px;
+	left:0px;
+	bottom: -14px;
+	background:url(/static/stylesheets/img/base/land.png) repeat-x;
+	z-index: 15;
+}
+#cutoff {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+}
+
+#flyer {
+	top: 20%;
+	left: 0%;
+}
+
+#flyer a {
+	width: 60px;
+	height: 45px;
+	background: url(/static/stylesheets/img/base/plane.png) no-repeat;
+	position: absolute;
+	text-decoration:none; 
+	display: block;
+    top: 10%;
+	left: 0%;
+	z-index: 5;
+}
+#flyer a span {
+visibility:hidden;
+}
+
+
+#sitelet-home {
+	position: absolute;
+	z-index: 100;
+	width: 650px;
+	height: 296px;
+	top: 50%;
+	left: 50%;
+	/* Half width and height offset*/
+	margin-top: -148px;
+	margin-left: -325px;
+	font-size: 14px;
+	color: #434343;
+}
+#sitelet-home #logo {
+	width: 225px;
+	height: 233px;
+	float: left;
+	padding: 21px 0px 0px 20px;
+}
+#sitelet-home #intro {
+	float: left;
+	width: 373px;
+	height: 250px;
+}
+#sitelet-home h2 {
+	background: transparent url(/static/stylesheets/img/base/pq_mantra.png) repeat scroll 0 0;
+	font-family: Georgia;
+	height: 43px;
+	margin: 20px 0 0 16px;
+	text-indent: -9999px;
+	width: 295px;
+}
+#sitelet-home form {
+	margin: 24px 0px 0px 18px;
+}
+#sitelet-home form input.text {
+	background:url(/static/stylesheets/img/base/input.gif) no-repeat;
+	display: block;
+	width: 329px;
+	height: 41px;
+	border: none;
+	margin: 10px 0 0 -2px;
+	padding: 7px 10px 0;
+	font-size: 24px;
+}
+#sitelet-home form input.text.focus {
+	background-position: 0px -48px;
+}
+form input.button {
+	background-color: #EEE;
+	border-color:#CCC #999 #999 #CCC;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 14px;
+	margin: 9px 0 0;
+	padding: 5px 8px;
+	-moz-border-radius:12px;
+	-webkit-border-radius: 12px;
+}
+#sitelet-home form input.down {
+	background-color: #EEE;
+	border-color:#999 #CCC #CCC #999;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 14px;
+	color: #777;
+	margin: 9px 0 0;
+	padding: 5px 8px;
+}
+#sitelet-home form input.button.disable {
+	border-color: #CCC;
+	color: #AAA;
+}
+#sitelet-home #success {
+	display: none;
+	padding: 5px 8px;
+	background-color: #F7F279;
+	border: 1px solid #EAD631;
+	margin-top: 10px;
+	font-size: 18px;
+	width: 328px;
+}
+
+form#signup{
+	margin-left: 24px;
+}
+
+input#email{
+	padding: 1px; height: 25px; width: 270px; font-size: 1.4em;
+}
+
+input#signup{
+	width: 220px; height: 40px; margin-top: 10px; font-size: 1.1em;
+}
+
+div#add_success{
+	/* border:5px solid #DDDDDD; */
+	font-size:1.3em;
+	margin-top:50px;
+	padding:5px;
+	width:280px;
+	-moz-border-radius-bottomleft:12px;
+	-moz-border-radius-bottomright:12px;
+	-moz-border-radius-topleft:12px;
+	-moz-border-radius-topright:12px;
+	-webkit-border-radius: 12px;
+}
+
+img.pink_checkbox{
+	margin-bottom: -6px; margin-right: 3px;
+}
+
+
+span.blank{
+	background:#FFFFD1 none repeat scroll 0 0;
+	border:1px solid #E2C922;
+	font-weight:bold;
+	margin:0 5px;
+	padding:0px 7px;
+	opacity:1;
+}
+div#motto,#smart
+{
+	font-size:1.4em;
+	margin-left:21px;
+	
+}
+
+#motto{
+margin-top:60px;
+}
+
+#smart
+{
+	font-weight:bold;
+	font-size:1.6em;
+	margin-left:29px;
+	position:	absolute;
+	margin-top: 58px;
+}
+
+#blinder
+{
+	background:#F7F5F4 none repeat scroll 0 0;
+	font-size:1.5em;
+	height:29px;
+	margin-left:105px;
+	margin-top:58px;
+	position:absolute;
+	text-align:center;
+	width:106px;
+	
+}
+/* spaces the blank */
+.smart_span_holder
+{
+	opacity:	0;
+}

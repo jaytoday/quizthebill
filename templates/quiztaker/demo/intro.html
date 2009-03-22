@@ -1,0 +1,123 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/demo/quizframe.css"/>
+
+<!--
+<script type="text/javascript" src="/static/scripts/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="/static/scripts/jquery.serialScroll-min.js"></script>
+<script type="text/javascript" src="/static/scripts/jquery.scrollTo-min.js"></script>
+
+<script type="text/javascript">	
+//easing equation, borrowed from jQuery easing plugin
+//http://gsgd.co.uk/sandbox/jquery/easing/
+$.easing.easeOutQuart = function (x, t, b, c, d) {
+return -c * ((t=t/d-1)*t*t*t - 1) + b;
+};
+
+jQuery(function( $ ){
+
+
+
+var $scroll = $('#quiz_selections');//we'll re use it a lot, so better save it to a var.
+
+$scroll.serialScroll({
+items:'li',
+next:'#quiz_intro a#choose_quiz',
+duration:1000,
+easing:'easeOutQuart', //use this easing equation for a funny effect
+lock:true,
+force:false,
+axis:'x',
+lazy:true,//NOTE: it's set to true, meaning you can add/remove/reorder items and the changes are taken into account.
+interval:false, //yeah! I now added auto-scrolling
+step:1, 
+start:1
+
+});	
+
+
+});
+
+
+// Problem is that the next button is actually in the parent frame.
+
+
+-->
+
+
+</script>
+
+<title>Plopquiz Intro </title></head>
+
+<body class="frame_body">
+<div class="quiz_frame_header" style="height:65px;">
+
+<div class="quiz_frame_logo" id="pq">
+<img src="/static/html/img/pq_logo_h_small.png"/>
+</div>
+
+</div>
+
+
+<div class="quiz_frame_content" style="height:235px;">
+
+<!--<div class="quiz_intro_title" ><b>Instructions</b></div>-->
+
+
+
+<div class="quiz_intro_text" >
+
+<p class="quiz_distributor" style="margin-bottom:12px;"><b>Plopquiz</b> would like you to take a short proficiency assessment:</p> 
+
+
+
+
+<div id="quiz_selections">
+
+<li class="select_quiz">
+
+<div class="quiz_selection" id="1" style="margin-top:-10px;">
+
+<div class="quiz_image"><img src="/static/html/img/phone_interview.png"/></div>
+
+<div class="quiz_description" id="quiz_intro">
+
+<img src="/static/html/img/cofounder_quiz.png" style="margin-top:-8px;"/>
+
+</div>
+<p class="quiz_distributor" style="margin-bottom:12px; margin-top:16px">It will require about <b>five minutes</b> of uninterrupted time.</p> 
+
+</div>
+</li>
+
+
+
+<li class="select_quiz">
+<div class="quiz_selection" id="2" style="display:none;">
+
+<div class="quiz_image"><img src="/static/html/img/energy.png"/></div>
+
+<div class="purple_box" id="quiz_description">
+
+<div class="quiz_description_title">Energy Quiz</div>
+
+<div class="quiz_description_text" id="quiz_description_text"></div>
+
+</div>
+
+
+</div><!-- quiz_selections -->
+</li>
+</li>
+
+
+</div>
+
+
+</div>
+
+</div><!-- quiz_frame_content -->
+
+
+
+
+</body></html>

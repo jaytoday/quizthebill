@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PlopQuiz - Show What You Know</title><meta id="keywords" name="Keywords" content="Test Your Knowledge, Upgrade Your Resume, Earn Awards and Sponsors.  " />
+<link rel="stylesheet" type="text/css" charset="utf-8" href="/static/stylesheets/demo/homepage.css" />
+<link rel="icon" href="/static/stylesheets/img/favicon.ico" type="image/x-icon"> 
+<!--[if lte IE 6]>
+<link href="ie6styles.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<style type="text/css">
+{% include "homepage.css" %}
+
+
+#land, #clouds-far, #clouds-near {
+	background-position: 0px 0px;
+}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js"></script> 
+
+<script type="text/javascript"> 
+{% include "../../static/scripts/jquery/jquery.timers.js" %} 
+{% include "../../static/scripts/utils/parallax.js" %} 
+{% include "../../static/scripts/utils/json2min.js" %} 
+{% include "../..//static/scripts/utils/rpc.js" %} 
+{% include "../../static/scripts/demo/homepage.js" %} 
+</script>
+
+
+</head>
+
+<body>
+<h1 style="display:none;">Test Your Knowledge, Upgrade Your Resume, Earn Awards and Sponsors.</h1>
+	<div id="viewport">
+		<div class="mid layer">
+			<div id="clouds-far"></div>
+		</div>
+		<div class="far layer">
+			<div id="land"></div>
+		</div>
+		<div class="near layer">
+			<div id="clouds-near"></div>
+		</div>
+	</div>
+	<div id="cutoff">
+		<div id="flyer"><a href="/preview/ad_embed"><span>Demo Page</span></a></div>
+		
+	</div>
+	<div class="sitelet" id="sitelet-home">
+		<div class="top">
+			<div class="left corner"></div>
+			<div class="right corner"></div>
+			<div class="liquid"></div>
+		</div>
+		<div class="middle">
+			<div class="wrap1"><div class="wrap2">
+					<div class="content">
+					
+					
+						<div id="logo">
+							<img src="/static/stylesheets/img/homepage/pq_logo.png" alt="" />
+						</div>
+						<div id="intro">
+							<div id="smart">smart</div>
+						
+							<div id="blinder"> quizzes for</div>
+							<div id="motto">
+								<span class="blank"><span class="smart_span_holder" id="smart1">smart</span></span> quizzes for 
+								<span class="blank"><span class="smart_span_holder">smart</span></span> people
+							</div>
+							<form action"#" id="signup" >
+								<div id="add_success" style="display:none;"> 
+									<img src="/static/stylesheets/img/pink_checkbox.png" class="pink_checkbox"/>
+									You've been added to our list. 
+								</div>
+								<input type="text" name="email" id="email" value="nobel@macarthur.com" />
+								<input type="button" class="button" value="sign me up for an invite!"/> 
+							</form>
+						</div>
+							<a style="float:right; margin-top:-22px" onclick="window.open('http://www.co2stats.com/certpro.php?s=1278&ref=http://www.plopquiz.com','popup','width=550,height=515,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0');return false;" href="http://www.co2stats.com/certpro.php?s=1278&ref=http://www.plopquiz.com/">
+<img border="0" src="/static/stylesheets/img/homepage/green_site.png"/>
+</a>
+				</div>
+			</div>
+			</div>
+			<div class="clear">
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="left corner"></div>
+			<div class="right corner"></div>
+			<div class="liquid"></div>
+		</div>
+	</div>
+	<div id="sitelet">
+
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,148 @@
+<div class="quiz_wrap" id="pq_wrapper">
+        <div id="quiz_overlay"></div>
+            
+        <div id="quiz_outer">
+        
+                <div id="quiz_inner">
+                
+                        <div id="quiz_bg">
+                                <div class="quiz_bg quiz_bg_n"></div>
+                                <div class="quiz_bg quiz_bg_ne"></div>
+                                <div class="quiz_bg quiz_bg_e"></div>
+                                <div class="quiz_bg quiz_bg_se"></div>
+                                <div class="quiz_bg quiz_bg_s"></div>
+                                <div class="quiz_bg quiz_bg_sw"></div>
+                                <div class="quiz_bg quiz_bg_w"></div>
+                                <div class="quiz_bg quiz_bg_nw"></div>
+                        </div>
+                        <div id="quiz_close"></div>
+                        
+                        <ul><li><div id="quiz_loading"><img src="{{ http_host }}/static/stylesheets/img/ajax-loader.gif"/><span class="loading">Loading...</span><img src="{{ http_host }}/static/stylesheets/img/ajax-loader.gif"/></div>
+       
+       </li></ul>   
+                        <div id="quiz_content"></div>
+                        <div class="timer_wrapper" id="quiz_timer">
+                                <div id="timer_bar" class="timer_bar timer_inner"></div>
+                        </div>
+                        <div id="quiz_answers">
+                        
+                        
+                        
+                        
+                                <div id="answer1" onmouseover="" class="answer"  name="answer1">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                        <td id="quiz_blue_left"></td>
+
+                                                        <td id="quiz_blue_main">
+                                                                <div class="answertext long"></div><div class="mini_loader"></div>
+                                                        </td>
+
+                                                        <td id="quiz_blue_right"></td>
+                                                </tr>
+                                        </table>
+                                </div>
+                                
+                                <div id="answer2" class="answer"  name="answer2">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                        <td id="quiz_blue_left"></td>
+
+                                                        <td id="quiz_blue_main">
+                                                                <div class="answertext long"></div><div class="mini_loader"></div>
+                                                        </td>
+
+                                                        <td id="quiz_blue_right"></td>
+                                                </tr>
+                                        </table>
+                                </div>
+                                
+                                <div id="answer3" class="answer" name="answer3">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                        <td id="quiz_blue_left"></td>
+
+                                                        <td id="quiz_blue_main">
+                                                                <div class="answertext long"></div><div class="mini_loader"></div>
+                                                        </td>
+
+                                                        <td id="quiz_blue_right"></td>
+                                                </tr>
+                                        </table>
+                                </div>
+
+                                <div id="skip" class="answer" name="skip">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                        <td id="quiz_pink_left"></td>
+
+                                                        <td id="quiz_pink_main">
+                                                                <div class="arrow"><img src="{{ http_host }}/static/stylesheets/img/arrow.png"></div>
+
+                                                                <div class="answertext" id="skiptext">Skip</div>
+                                                        </td>
+
+                                                        <td id="quiz_pink_right"></td>
+                                                </tr>
+                                        </table>
+                                </div>
+                                
+                                                    <!--      <div id="confirm" onmouseover="" class="answer" name="confirm">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                        <td id="quiz_purple_left"></td>
+
+                                                        <td id="quiz_purple_main">
+                                                                <div class="answertext long"></div>
+                                                        </td>
+
+                                                        <td id="quiz_purple_right"></td>
+                                                </tr>
+                                        </table>
+                                </div>  -->
+                                {# Trying out big Take This Quiz Button, so I'm commenting this out #}
+                                
+                                <!--
+                             <button  class="answer intro_quiz" id="confirm"><span id="intro_button" class="intro_button continue_button">Practice Quiz</span> <img src="{{ http_host }}/static/stylesheets/img/utils/purple_next.png"/></button>
+                                
+                                <div class="go_to_site take_practice_quiz"><ul><li>No Timer.</li><li>Study for the Test</li></ul></div>
+                                -->
+                                
+                                                             <button  class="answer intro_quiz" id="confirm"><span id="intro_button" class="intro_button continue_button">Take This Quiz</span> <img width="15" height="16" src="{{ http_host }}/static/stylesheets/img/utils/purple_next_tiny.png"/></button>
+                              
+                                 <div id="points" class="go_to_site take_test"><ul><li>Build an Academic Profile</li><li>Earn Awards For Your High Scores</li><li>Upgrade Your Resume in Minutes</li></ul></div>
+                                {# Just for now, we'll leave this out.  #}
+                                <!--
+                                  <button  class="answer take_test" id="test" onClick="$('button#confirm').click(); return; "><span  class="intro_button continue_button">Take the Test</span> <img src="{{ http_host }}/static/stylesheets/img/utils/purple_next.png"/></button>
+                             
+                                -->
+                                  
+
+                                                  <!--        <div id="begin_quiz" onmouseover="" class="answer" name="confirm">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                        <td id="quiz_purple_left"></td>
+
+                                                        <td id="quiz_purple_main">
+                                                                <div class="answertext long"></div>
+                                                        </td>
+
+                                                        <td id="quiz_purple_right"></td>
+                                                </tr>
+                                        </table>
+                                </div> -->
+                                
+                                <div id="timeout" class="answer" style="" name="timeout"></div>
+                                <br style="clear: both;" />
+                        </div>
+                
+
+                
+                </div>
+        </div>
+
+
+        <div id="quiz_init"><img width='32' height='22'  src="{{ http_host }}/static/stylesheets/img/ajax-loader.gif"/><span class="loading">Loading...</span><img  width='32' height='22'  src="{{ http_host }}/static/stylesheets/img/ajax-loader.gif"/></div>
+        
+        
+        </div>

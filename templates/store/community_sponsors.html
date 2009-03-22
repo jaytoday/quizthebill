@@ -1,0 +1,108 @@
+{% extends "../base.html" %}
+{% block title %}Apply to Be a Community Sponsor{% endblock %}
+{% block head %}
+
+	<style type="text/css"> 
+	{% include "../../static/stylesheets/store/community_sponsors.css" %} 
+	{% include "../../static/stylesheets/utils/form.css" %} 
+	{% include "../../static/stylesheets/utils/feed.css" %} 
+	</style> 
+
+<script type="text/javascript"> {% include "../../static/scripts/store/community_sponsors.js" %} </script>
+
+
+
+
+{% endblock %}
+
+
+{% block main %}
+<div id="left">
+
+<div id="cs_intro" class="frame_box">
+<h1></h1>
+<p class="big">PlopQuiz community sponsors offer support for students learning about public interest issues such as energy and economic renewal.</p>
+
+<p>Sponsorships can be earned by the top 10-15% of high-scoring students for a subject.</p><p> Upon earning a sponsorship, a student receives a plaque for their profile and a message from their new sponsor.</p>
+<!-- <div style="height:10px;"></div> -->
+
+<p>At any time, a community sponsor can:</p>
+
+<ul>
+    <li><b>Choose</b> quiz subjects to support.</li> 
+
+
+    <li><b>Customize</b> a congratulatory message. Describe jobs openings, internships, or services offered by your organization.</li>
+
+
+   <li><b>View</b> a list of sponsored students.</li>
+
+
+   {# <li>Contact Us. We'll respond within 24 hours.</li> #}
+
+</ul>
+
+
+
+</div>
+
+</div>
+
+
+
+<div id="right">
+<div id="recent_sponsorships">
+<button class="noclick" id="recent_sponsorships"><span class="continue_button thin">Recent Sponsorships </span></button>
+<div id="action_feed">
+{% for action in recent_sponsorships %}
+
+{% include "sponsorship_feed_item.html" %}
+
+{% endfor %}
+</div>
+
+
+</div>
+
+<div id="sponsor_apply">
+<button class="noclick"><span class="continue_button thin">Apply to Be a Community Sponsor</span> </button>
+<div id="sponsor_signup" class="frame_box" >
+<div style="height: 5px;"> </div>
+<p>Sponsorships are <b> 100% free</b>. No payment information required.</p>
+<div style="height: 15px;"> </div>
+<p>Apply before March 31 2009 to get early access to new features.</p>
+</div>
+
+<div style="display:none;" id="submit_success">
+
+We'll e-mail you when your application is accepted.
+<div style="height:10px;"></div>
+For now, you can <a id="preview_quiz">preview our quiz subjects</a>.</div>
+<div id="sponsor_application">
+<form id="sponsor_apply" name="sponsor_apply">
+   <fieldset class="no_style" >  
+     <label for="name" id="name_label">Your Organization Name</label>  
+     <input type="text" name="name" id="name" size="20" value="" class="text-input" />  
+       <div style="height:10px; margin-top:-4px;"> <label class="error" for="name" id="name_error">This field is required.</label>  </div>
+     <label for="email" id="email_label">Your Contact Email</label>  
+     <input type="text" name="email" id="email" size="20" value="" class="text-input" />  
+        <div style="height:10px; margin-top:-4px;"><label class="error" for="email" id="email_error">This field is required.</label> 
+        <label class="error" for="email" id="valid_email_error">Invalid email address.</label>
+          </div>
+   <!--  <label for="phone" id="phone_label">Contact Phone</label>  
+     <input type="text" name="phone" id="phone" size="30" value="" class="text-input" />  
+     <label class="error" for="phone" id="phone_error">This field is required.</label>  
+       -->
+     <br />  
+
+   </fieldset>  
+
+</form>
+<button id="sponsor_submit"><span class="continue_button thin">Submit</span></button>
+</div>
+</div>
+   
+    </div>
+
+
+{% endblock %}

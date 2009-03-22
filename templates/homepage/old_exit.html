@@ -1,0 +1,45 @@
+{% extends "../base.html" %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/old_homepage.css"/>
+<script type="text/javascript" src="/static/scripts/homepage/old_homepage.js"></script>
+
+<!-- freebase -->
+<script type="text/javascript" src="/static/scripts/freebase-suggest/freebase.suggest.js"></script>
+<link type="text/css" rel="stylesheet" href="/static/scripts/freebase-suggest/dist/css/freebase-controls.css" />
+  <style type="text/css"> 
+  .fbs-li-types { display:none; }   /* if you want to hide the type info in the suggest popup */
+ </style>
+ 
+
+{% endblock %}
+
+{% block login %}{% endblock %}
+
+
+{% block main %}
+								
+					
+
+
+		<div class="left">		
+						<div id="logo">
+							<img src="/static/stylesheets/img/homepage/horizontal_logo.png" alt="" />
+						</div>
+						<div id="intro">
+							<div id="smart">smart</div>
+						
+							<div id="blinder"> quizzes  &nbsp; for</div>
+							<div id="motto">
+								<span class="blank"><span class="smart_span_holder" id="smart1">smart</span></span> quizzes for 
+								<span class="blank" id="two"><span class="smart_span_holder">smart</span></span> people
+							</div>
+			
+						</div>
+		</div>	
+
+
+
+
+
+{% endblock %}

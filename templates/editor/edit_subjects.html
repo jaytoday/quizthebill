@@ -1,0 +1,56 @@
+{% extends "../base.html" %}
+{% block head %}
+
+<style type="text/css"> 
+{% include "../../static/stylesheets/ui/app_screen.css" %} 
+{% include "../../static/stylesheets/ui/tabs.css" %} 
+{% include "../../static/stylesheets/editor/edit_subjects.css" %} 
+{% include "../../static/stylesheets/utils/form.css" %}
+{% include "../../static/stylesheets/utils/subjects.css" %}
+</style> 
+
+ <script type="text/javascript"> profile_path = '/profile/{{user_session.profile_path}}'; this_user = "{{user_session.unique_identifier}}" </script>
+ 
+
+<script type="text/javascript"> {{ subjects_js }}</script>
+ 
+{% endblock %}
+
+
+{% block main %}
+
+
+
+
+<div class="frame_box" id="edit_subjects">
+
+
+<div class="frame_header">
+<h2>Quiz Subjects</h2>
+<span>>></span>
+<h2 id="subject_selection"></h2>
+</div>
+
+		<div class="subject_options">
+		<button class="find_more_subjects"> More Subjects<img src="/static/stylesheets/img/utils/purple_next_tiny.png"/></button><br/>
+<button id="create_new_subject">Create New Subject</button>
+</div>
+
+<div id="subjects_container">
+
+
+{% include "subject_container.html" %} {# Use RefreshSubjects XML-RPC to Refresh this Block #}
+
+
+</div>
+
+
+	</div>
+
+
+
+
+
+{% include "subject/new_subject.html" %}
+
+{% endblock %}
