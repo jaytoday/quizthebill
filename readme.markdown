@@ -1,4 +1,4 @@
-GovPix
+#QuiztheBill
 ================
 
 ![QuiztheBill](http://www.plopquiz.com/static/stylesheets/img/utils/plopquiz_dbl_icon.png)

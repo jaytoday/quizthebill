@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /console
-Disallow: /dev
-Sitemap: http://www.plopquiz.com/sitemap.xml

@@ -1,7 +1,0 @@
-{# Include All Blog CSS Files #}
-
-{% include "base.css" %} 
-
-{% include "../../static/stylesheets/blog/blog.css" %} 
-
-

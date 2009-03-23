@@ -7,8 +7,7 @@
 {% block head %}
 
 <style type="text/css"> 
-{% include "../../static/stylesheets/utils/form.css" %}
-{% include "../../static/stylesheets/quiz_the_bill/frontpage.css" %}
+{% include "../../static/stylesheets/frontpage.css" %}
 </style> 
 
 
@@ -26,31 +25,26 @@
 </div>
 <div id="sub_header">Because Congress Needs Help With Their Homework</div>
 
-<div><script src="{{ http_host}}/js/quiz/{{ featured_subject }}" type="text/javascript"></script></div>
+<div><script src="{{ pq_server }}/js/quiz/{{ featured_subject }}" type="text/javascript"></script></div>
 
 <div id="intro" class="frame_box panel">
 
-	<p>Elected officials should be more accountable for understanding legislation before voting for it.</p>
+	<p><a style="font-size: 1.1em;">QuiztheBill</a> is a collaborative, free, public resource of quizzes about new congressional bills.</p>
 
-	<p><a style="font-size: 1.1em;"href="http://www.readthebill.org">ReadtheBill.org</a> is petitioning for a law  to give legislators and the rest of us 72 hours of access to a bill before its vote.</p>
+	<p>This project is inspired by <a style="font-size: 1.1em;"href="http://www.readthebill.org">ReadtheBill.org</a>, a site asking us to demand more transparency and accountability from the federal legislation process. </p>
 
 	 
 	  
 	 
-	<a target="_blank" href="http://www.readthebill.org"> <button class="" style="margin: 14px 130px; padding: 11px; background: rgb(224, 224, 224) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 325px; width: 550px;">
+	<button class="" style="margin: 14px 130px; padding: 11px; background: rgb(224, 224, 224) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 325px; width: 550px;">
 	 
-	 <img style="margin: 60px 0pt 110px; float: left;" src="http://media.sunlightprojects.org/readthebill/images/v2/72_button_b.png"/>
-	  <img style="margin-right: 0pt; position: absolute; margin-left: -110px; margin-top: 150px;" src="http://media.sunlightprojects.org/readthebill/images/v2/72_button.png"/>
+	  <img style="margin: 60px 0pt 0px -70px; position:absolute;" src="http://media.sunlightprojects.org/readthebill/images/v2/72_button_b.png"/>
+	  <img style="margin-right: 0pt; position: absolute; margin-left: -75px; margin-top: 150px;" src="http://media.sunlightprojects.org/readthebill/images/v2/72_button.png"/>
 
-<object width="400" height="302"><param value="true" name="allowfullscreen"/><param value="always" name="allowscriptaccess"/><param value="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" name="movie"/><embed width="400" height="302" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1"/></object>
+<object width="400" height="302"  style="margin-right: -50px; margin-left: 30px; position: relative;"><param value="true" name="allowfullscreen"/><param value="always" name="allowscriptaccess"/><param value="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" name="movie"/><embed width="400" height="302" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1"/></object>
 </button>
 
-</a>
-	 
-	<p>The ReadtheBill movement has inspired us to build a public resource of quizzes for federal bills.</p>
-<p>But we need your help.</p>
-	<p class="note" style="margin: -10px 0pt; font-weight: bold; font-size: 50px ! important;">Contribute a quiz item. <br/> Click one of the bills below.</p>
-	
+<div style="margin: 30px 0pt -10px; font-weight: bold; font-size: 44px ! important; padding-top:35px; height:150px; text-align:center;" class="note">Contributing quiz items is easy!  <div style="height:30px;"></div> Just click one of the bills below.</div>
 </div>
 
 <div class="info_note panel" id="updates">

@@ -95,7 +95,10 @@ def render(template_path, template_dict, debug=False):
   template_dict['login_text'] = user_info[1]
   template_dict['login_url'] = user_info[2]
   template_dict['http_host'] = 'http://' + str(os.environ['HTTP_HOST'])
-  template_dict['pq_host'] = 'http://www.plopquiz.com'
+  if os.environ.get('SERVER_SOFTWARE','').startswith('Devel'):
+  	template_dict['pq_server'] = 'http://localhost:8080' 
+  else:
+  	template_dict['pq_server'] = 'http://www.plopquiz.com'   	
   return t.render(Context(template_dict))
 
   

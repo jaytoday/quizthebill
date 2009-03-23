@@ -4,22 +4,11 @@ MAX_LIMIT = 500;
 
 {% include "../../static/scripts/jquery/jquery-1.3.2.js" %}
 {% include "../../static/scripts/utils/preserve_default_text.js" %}
+
+
 jQuery(function(){
-
-$('#frame').load(function()
-{
-
-// Cross-Frame Scripting Doesn't Allow Access to Document...
-/* $(window).mouseup(function(){
-var selection = window.getSelection();
-if (selection.length > 2) return OpenEditor(selection);
- }); */
- 
- resizeIframe();
- 
-});
 		
-
+resizeIframe();
 
 $('input#selection').bind('paste', function() { 
 
@@ -54,35 +43,49 @@ var get_selection = function(){ return document.getSelection(); };
 //  var statement = get_selection() || statement;
 var doc = document;
 
-var serverUrl = "{{ http_server }}";
+var serverUrl = "{{ pq_server }}";
 // editor can run XSS, so it needs absolute URL
 
 var id = "pq-injected-data";
 
+/*
+ * 
+ * Send selected text to pq_server and open quiz editor
+ * 
+ */
 jQuery.ajax({
-	type: "POST",
-	url:  "/ubiquity/",
-	data:
+type: "GET",
+url:  serverUrl +"/ubiquity/", 
+dataType: "jsonp",
+data:
 {
-	get: "html",
-	text: statement,
-	topic_key: "{{ topic_key }}",
-	subject_key: "{{ subject_key }}"
+get: "html",
+text: statement,
+topic_name: "{{ topic_name }}",
+subject_key: "{{ subject_key }}"
 },
-	error: function(data){
-		jQuery(doc.body).append("<div id='error'>" + data + "</div>");
-	},
-	success: function(data){
-		// Remove existing injected data
-		jQuery('#' + id, doc.body).remove();
-		jQuery('head', doc).append('<link rel="stylesheet" type="text/css"  href="{{ http_server }}/static/html/quizbuilder/ubiquity.css" />');
-		jQuery.post('/ubiquity/?get=js', function(script){
-			eval(script); 
-			jQuery(doc.body).append("<div id='" + id + "'>" + data + "</div>");
-			runCode(); 
-		});
-	},
-  complete: function(data){  }
+error: function(data){
+	jQuery(doc.body).append("<div id='error'>" + data + "</div>");
+},
+success: function(data){
+	// Remove existing injected data
+	jQuery('#' + id, doc.body).remove();
+	jQuery('head', doc).append('<link rel="stylesheet" type="text/css"  href="{{ pq_server }}/static/html/quizbuilder/ubiquity.css" />');
+
+				//get accompanying javascript
+				jQuery.ajax({
+				type: "GET",
+				url: serverUrl + '/ubiquity/?get=js', 
+				dataType: "jsonp",
+				success:  function(script){
+				eval(script); 
+				jQuery(doc.body).append("<div id='" + id + "'>" + data + "</div>");
+				runCode(); 
+				 } 
+					  }); 
+					    
+},
+complete: function(data){  }
 });
 
 
