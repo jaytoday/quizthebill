@@ -5,7 +5,7 @@
 */
 
 .sitelet .middle .main_wrapper .main {
-height:3480px;
+height:3750px;
 }
 
 #header{
@@ -72,6 +72,31 @@ width:620px;
 text-align:center;
 }
 
+
+button#readthebill{
+position:relative;
+margin: 14px 130px; padding: 11px; background: rgb(224, 224, 224) none repeat scroll 0% 0%;
+ height: 325px; width: 550px;
+}
+button#readthebill img{
+width:99px;
+height:99px;
+}
+
+button#readthebill img#read_button{left:5px;
+position:relative;
+top:60px;}
+
+button#readthebill img#st_button{left:-97px;
+
+position:relative;
+top:150px;}
+
+button#readthebill object{ left:50px;
+position:relative;
+top:-100px;}
+
+
 div#first_response{
 font-size:35px;
 margin:-5px -38px;
@@ -82,9 +107,16 @@ width:100%;
 
 div#first_response button{font-size:0.8em;
 margin:0;
-padding:10px 20px;}
+padding:10px 20px;
+width:570px;
+}
 
 div#first_response button img{ margin:10px 10px 0 -13px; }
+
+
+div#contribute {
+margin: 30px 0pt -10px; font-weight: bold; font-size: 44px ! important; padding-top:35px; height:150px; text-align:center;
+}
 
 div#bills {
 margin-top:1332px;
@@ -158,8 +190,28 @@ div.bill .stats li strong{
 margin-right:7px;
 }
 
-div#login, div#quick_links {
 
-display:none;
+div#sitelinks_header{
+bottom:350px;
+font-size:2em;
+left:22%;
+padding:10px 60px;
+position:absolute;
+}
 
+div#sitelinks {
+bottom:100px;
+font-size:2em;
+padding:40px 50px;
+position:absolute;
+width:890px;
+height:200px;
+}
+
+div#sitelinks a{
+float:left;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border:5px solid #DDDDDD;
+margin:10px;
 }

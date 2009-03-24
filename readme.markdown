@@ -25,6 +25,21 @@ See 'setup' for details about configuring dev_appserver.py.
 For development updates, visit http://www.jamtoday.org.
 
 
+
+Codebase
+------------   
+
+This application, built with a modified version of Django 0.96, is a client to product PlopQuiz quiz items.
+It uses the Sunlight Light Labs API to retrieve data, and then interfaces via XML-RPC with the PlopQuiz server.
+
+
+URL mappings are in urls.py. Views in views.py, and API methods in methods.py.
+
+HTML and JS are in /templates, and server-side AJAX components are in rpc.py.
+
+The next release will be focused on a high-level API for modifying the client.
+ 
+
 Making Quiz Items
 ------------   
 

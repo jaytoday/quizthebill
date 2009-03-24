@@ -29,7 +29,8 @@ You can register at http://services.sunlightlabs.com/api/register/
 
 class UpdateStats(webapp.RequestHandler):
 
-  def get(self):    
+  def get(self): 
+     
 	"""
 
 	This method retrieves Congressional data. It is not necessary for 

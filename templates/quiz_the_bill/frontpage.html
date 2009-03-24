@@ -36,15 +36,15 @@
 	 
 	  
 	 
-	<button class="" style="margin: 14px 130px; padding: 11px; background: rgb(224, 224, 224) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 325px; width: 550px;">
-	 
-	  <img style="margin: 60px 0pt 0px -70px; position:absolute;" src="http://media.sunlightprojects.org/readthebill/images/v2/72_button_b.png"/>
-	  <img style="margin-right: 0pt; position: absolute; margin-left: -75px; margin-top: 150px;" src="http://media.sunlightprojects.org/readthebill/images/v2/72_button.png"/>
-
-<object width="400" height="302"  style="margin-right: -50px; margin-left: 30px; position: relative;"><param value="true" name="allowfullscreen"/><param value="always" name="allowscriptaccess"/><param value="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" name="movie"/><embed width="400" height="302" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1"/></object>
+	<button id="readthebill">
+	  <div style="clear:both;">
+	  <img id="read_button"  src="http://media.sunlightprojects.org/readthebill/images/v2/72_button_b.png"/>
+	  <img id="st_button" src="http://media.sunlightprojects.org/readthebill/images/v2/72_button.png"/>
+</div>
+<object width="400" height="302"  ><param value="true" name="allowfullscreen"/><param value="always" name="allowscriptaccess"/><param value="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" name="movie"/><embed width="400" height="302" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://vimeo.com/moogaloop.swf?clip_id=3366620&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1"/></object>
 </button>
 
-<div style="margin: 30px 0pt -10px; font-weight: bold; font-size: 44px ! important; padding-top:35px; height:150px; text-align:center;" class="note">Contributing quiz items is easy!  <div style="height:30px;"></div> Just click one of the bills below.</div>
+<div id="contribute" class="note">Contributing quiz items is easy!  <div style="height:30px;"></div> Just click one of the bills below.</div>
 </div>
 
 <div class="info_note panel" id="updates">
@@ -82,6 +82,26 @@
 {% endfor %}
 </div>
 
+
+
+<div id="sitelinks_header" class="note">
+<h3>Democracy is Spreading</h3>
+</div>
+<div id="sitelinks">
+
+<a target="_blank" href="http://www.sunlightnetwork.com/"><img height="72" src="/static/stylesheets/img/quiz_the_bill/sunlight.gif"/></a>
+<a target="_blank" href="http://www.opensecrets.org/"><img height="72" src="/static/stylesheets/img/quiz_the_bill/opensecrets.gif"/></a>
+<a target="_blank" href="http://www.change-congress.org"><img height="72" src="/static/stylesheets/img/quiz_the_bill/cc.png"/></a>
+<a target="_blank" href="http://tweetcongress.org"><img height="72" src="/static/stylesheets/img/quiz_the_bill/tc.png"/></a>
+
+<a target="_blank" href="http://www.govit.com"><img height="72" src="/static/stylesheets/img/quiz_the_bill/govit.png"/></a>
+<a target="_blank" href="http://www.maplight.org/"><img height="72" src="/static/stylesheets/img/quiz_the_bill/maplight.gif"/></a>
+<a target="_blank" href="http://www.watchdog.net/"><img height="72" src="/static/stylesheets/img/quiz_the_bill/watchdog.png"/></a>
+<a target="_blank" href="http://www.opencongress.org"><img height="72" src="/static/stylesheets/img/quiz_the_bill/opencongress.gif"/></a>
+<a target="_blank" href="http://www.publicmarkup.org"><img height="72" src="/static/stylesheets/img/quiz_the_bill/public_markup.png"/></a>
+<a target="_blank" href="http://www.commoncause.org"><img height="72" src="/static/stylesheets/img/quiz_the_bill/common_cause.jpg"/></a>
+
+</div>
 
 {% endblock %}
 
