@@ -63,7 +63,9 @@ class RenderBillFrame(webapp.RequestHandler):
 
            
   def get_bill_url(self):	
-	# Send Request to Service and Open Response for Parsing
+	"""
+	Send Request to Service and Open Response for Parsing
+	"""
 	import urllib
 	self.request_args = {'bill':  self.this_bill.govtrack_id}
 	self.formatted_args = urllib.urlencode(self.request_args)

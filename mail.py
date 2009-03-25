@@ -4,6 +4,9 @@ from google.appengine.api import mail
 # Todo: still need update e-mail, hooked in through create_bill. 
 
 def confirm_email(email_address):
+	"""
+	Sends email confirming signup
+	"""
 	if not mail.is_email_valid(email_address):
 		logging.warning("%s is not a valid email", email_address)
 		return False
@@ -53,6 +56,9 @@ def confirm_email(email_address):
 
 
 def update_email(new_bill, email_address):
+	"""
+	Sends update about new bill to email address
+	"""
 	if not mail.is_email_valid(email_address):
 		logging.warning("%s is not a valid email", email_address)
 		return False
@@ -120,8 +126,9 @@ def mail_footer():
 
 
 
-# Replace this with your own e-mail address
-# You need to get the address verified through Google
-
 def get_sender(): # 
+	"""
+	Replace this with your own e-mail address
+	You need to get the address verified through Google
+	"""
 	return "plopquiz@plopquiz.com"

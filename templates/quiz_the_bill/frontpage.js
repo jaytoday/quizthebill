@@ -13,6 +13,7 @@ $('div.bill').hover(function(){
 	$(this).find('div').css({"color":"#000040"});
 });
 
+// New Signup for Bill Updates
 $('div#updates').find('button').click(function(){
 	var email = $('div#updates').find('input').val();
 	console.log(email); 

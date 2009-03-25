@@ -35,8 +35,13 @@ return setTimeout(function(){ $('#header_success').hide();  $('#header').show('s
 });
 
 
-function OpenEditor(statement){
+function OpenEditor(statement){ 
 
+/*
+ * 
+ * Send selected text to pq_server and open quiz editor
+ * 
+ */
 
 var this_url = window.location.href;      
 var get_selection = function(){ return document.getSelection(); };
@@ -48,11 +53,6 @@ var serverUrl = "{{ pq_server }}";
 
 var id = "pq-injected-data";
 
-/*
- * 
- * Send selected text to pq_server and open quiz editor
- * 
- */
 jQuery.ajax({
 type: "GET",
 url:  serverUrl +"/ubiquity/", 

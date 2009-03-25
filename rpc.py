@@ -5,7 +5,7 @@ from google.appengine.ext import db
 
 class RPCMethods(webapp.RequestHandler):
   """ Defines AJAX methods.
-  NOTE: Do not allow remote callers access to private/protected "_*" methods.
+  NOTE: Does not allow remote callers access to private/protected "_*" methods.
   """
 
   def post(self):
@@ -14,6 +14,9 @@ class RPCMethods(webapp.RequestHandler):
 
 
   def GetBillUpdates(self):     
+		"""
+		A new sign up for bill updates via email
+		"""
 		email_address = self.request.get('email')
 		from models import EmailUpdate
 		new_signup = EmailUpdate( email_address = email_address)

@@ -29,8 +29,7 @@ You can register at http://services.sunlightlabs.com/api/register/
 
 class UpdateStats(webapp.RequestHandler):
 
-  def get(self): 
-     
+  def get(self):     
 	"""
 
 	This method retrieves Congressional data. It is not necessary for 
@@ -50,7 +49,9 @@ class UpdateStats(webapp.RequestHandler):
     
     
   def get_top_bills(self):	
-	# Parse updated XML list of ranked bills From OpenCongress Service
+	"""
+	Parse updated XML list of ranked bills From OpenCongress Service
+	"""
 	import urllib
 	self.request_args = {'order':  'desc',
 	                     'page' :    1,
@@ -81,7 +82,9 @@ class UpdateStats(webapp.RequestHandler):
 
 
   def update_bill(self, bill):
-	# Check if a bill exists in datastore, and update its stats.
+	"""
+	Check if a bill exists in datastore, and update its stats.
+	"""
 	this_bill = Bill.get_by_key_name(bill['title']) 
 	logging.info(bill['title']) 
 	if this_bill is None: 
@@ -112,7 +115,9 @@ class UpdateStats(webapp.RequestHandler):
 
 
   def create_bill(self, bill):
-    # Save a new bill to the datastore
+    """
+    Save a new bill to the datastore
+    """
     if "-s" in bill['id']: bill['govtrack_id'] = "s" + bill['id'].replace("-s", "-") 
     elif "-h" in bill['id']: bill['govtrack_id'] = "h" + bill['id'].replace("-h", "-")  
     else: bill['govtrack_id'] = bill['id']
@@ -130,6 +135,9 @@ class UpdateStats(webapp.RequestHandler):
                     
 
   def send_email_updates(self, bill):
+      """
+      Sends e-mail with a bill update to subscribers
+      """
       from mail import update_email
       from models import EmailUpdate
       subscribers = EmailUpdate.all().fetch(1000)
