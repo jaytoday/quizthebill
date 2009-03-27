@@ -471,7 +471,7 @@ return o;}
 if(!window.console||!console.firebug)
 {var names=["log","debug","info","warn","error","assert","dir","dirxml","group","groupEnd","time","timeEnd","count","trace","profile","profileEnd"];window.console={};for(var i=0;i<names.length;++i)
 window.console[names[i]]=function(){}}
-$(function(){$('div.main').removeClass('hide');jqViewport=$('#viewport');function resizeViewport(){var viewWidth=jqViewport.width();var viewHeight=jqViewport.height();$('.layer.near',jqViewport).css({width:(viewWidth*1.4),height:(viewHeight*1.3)});$('.layer.mid',jqViewport).css({width:(viewWidth*1.15),height:(viewHeight*1.05)});$('.layer.far',jqViewport).css({width:(viewWidth*1.04),height:(viewHeight*1.01)});jqViewport.jparallax({frameDuration:40,takeoverFactor:0.68,takeoverThresh:0.002},{}).css({overflow:"hidden"});}
+$(function(){$('div.main').removeClass('hide');jqViewport=$('#viewport');function resizeViewport(){var viewWidth=jqViewport.width();var viewHeight=jqViewport.height();$('.layer.near',jqViewport).css({width:(viewWidth*1.4),height:(viewHeight*1.3)});$('.layer.mid',jqViewport).css({width:(viewWidth*1.15),height:(viewHeight*1.05)});$('.layer.far',jqViewport).css({width:(viewWidth*1.04),height:(viewHeight*1.01)}); }//jqViewport.jparallax({frameDuration:40,takeoverFactor:0.68,takeoverThresh:0.002},{}).css({overflow:"hidden"});}
 resizeViewport();$(window).resize(resizeViewport);$('input[type=button], button').focus(function()
 {$(this).addClass('focus');}).focus(function()
 {$(this).blur();}).mousedown(function()

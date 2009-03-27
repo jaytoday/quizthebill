@@ -26,7 +26,6 @@ class Bill(db.Model):
     latest_action = db.StringProperty(required=False)   
     sponsor = db.StringProperty(required=False)   
     sponsor_name = db.StringProperty(required=False)   
-    topic_key = db.StringProperty(required=False)  
 
 class EmailUpdate(db.Model): 
   email_address = db.EmailProperty(required=True)
